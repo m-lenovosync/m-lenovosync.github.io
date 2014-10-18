@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Transitions - jQuery Mobile Demos</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"> -->
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/main.css">
+	
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" class="bg_purple01 aduit-chart" data-page-name="audit">
+    <header class="headerWrap">
+		<h2 class="lenovoTitle">wistron_ZS</h2>
+		<a href="javascript:void(0)" data-rel="back" class="jqm-navmenu-link ui-btn-left headico myico-arrowL"></a>
+		<a href="Audit_Search.html" data-transition="slide" class="jqm-search-link ui-btn-right myico-search"></a>
+    </header>
+	<!-- /header -->
+    
+	<div role="main" class="ui-content">
+       <div class="mainWrap ui_audit basefont1">  
+            <div class="ui_auditodm_title">99<span>Score</span> <span class="eai_state up"></span></div>
+			<div class="ui_auditodm_chart audit_odm" id="chart_auditOdm_bar"></div>
+			<div class="ui_auditodm_info basefont1">
+				<div class="ui_auditodm_info_tips">OP Quality</div>
+				<div class="ui_auditodm_info_con">Front reclaimer not wearing wrist strap, and holding more stars materials
+				</div>
+				<div class="ui_auditodm_info_con">Front reclaimer not wearing wrist strap, and holding more stars materials</div>
+				<div class="ui_auditodm_info_con">Unpacking blade and keyboard stacked models set</div>
+				
+			</div>
+       </div>
+	</div><!-- /content -->
+    
+	<!-- footer -->
+	<div data-role="footer" class="footerWrap">
+		<div class="navWrap">
+		    <a href="Qstop_Odm.html" data-transition="slide" class="navList nav01">
+		        <i class="myico-nav01"></i>
+		        <p>Q-STOP</p>
+		    </a>
+		    <a href="FAY_OOB_Odm.html" data-transition="slide" class="navList nav02">
+		        <i class="myico-nav02"></i>
+		        <p>FPY/OOB</p>
+		    </a>
+		    <a href="Audit.html" data-transition="slide" class="navList nav03">
+		        <i class="myico-nav03"></i>
+		        <p>AUDIT</p>
+		    </a>
+		    <a href="FAI.html" data-transition="slide" class="navList nav04">
+		        <i class="myico-nav04"></i>
+		        <p>FAI</p>
+		    </a>
+		    <a href="EC.html" data-transition="slide" class="navList nav05">
+		        <i class="myico-nav05"></i>
+		        <p>EC</p>
+		    </a>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Javascript with AMD 
+================================================== -->
+<script src="../js/require.js" data-main="../js/main" ></script>	
+</body>
+</html>

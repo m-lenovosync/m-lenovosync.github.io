@@ -1,0 +1,70 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LENOVO V2.0</title>
+    <meta name="description" content="">
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- IOS6全屏 Chrome高版本全屏
+================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metas
+================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" data-dom-cache="true" class="bg_color_02 js-chart">
+	
+	<header class="headerWrap">
+		<h2 class="lenovoTitle">Basic Information</h2>
+		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
+	</header>
+	<!-- /header -->
+	<div role="main" class="ui-content noFooter">
+        <div class="PcenterMain">
+			<div class="userinfo_1">				
+				<div class="photoWarp">
+					<span class="userBg01"><span class="userBg02"><span class="userBg03"><i class="myico-user userIcon"></i><img src="../images/temp/20141015001445616.jpg" alt="" /></span></span></span>
+				</div>
+				<dl class="infoList">
+					<dt class="infoTit">Chinese name</dt>
+					<dd><input type="text" class="form_txt_style"></dd>					
+				</dl>
+				<dl class="infoList">
+					<dt class="infoTit">English name</dt>
+					<dd><input type="text" class="form_txt_style"></dd>					
+				</dl>
+				<dl class="infoList">
+					<dt class="infoTit infosex">Sex</dt>
+					<dd>
+                    	<span class="form_radio_wrap"><input type="radio" id="radio01" name="sex" /><label for="radio01" class="form_radio"><span class="myico-women"></span></label></span>
+                        <span class="form_radio_wrap"><input type="radio" id="radio02" name="sex" /><label for="radio02" class="form_radio"><span class="myico-men"></span></label></span>
+					</dd>					
+				</dl>
+				<dl class="infoList">
+					<dt class="infoTit">Mailbox</dt>
+					<dd><input type="text" class="form_txt_style"></dd>					
+				</dl>
+				<p class="infoBtn infoP20"><input type="submit" class="form_btn form_sub_btn" value="SAVE"></p>
+			</div>
+		</div>
+	</div>
+</div><!-- /page -->
+
+<!-- Javascript with AMD 
+================================================== -->
+<script src="../js/require.js" data-main="../js/main" ></script>
+</body>
+</html>

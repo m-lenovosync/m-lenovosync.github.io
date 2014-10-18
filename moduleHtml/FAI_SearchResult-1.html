@@ -1,0 +1,77 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LENOVO V2.0</title>
+    <meta name="description" content="">
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- IOS6全屏 Chrome高版本全屏
+================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metas
+================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Qstop.css">
+    <style>
+        .ui_fai_pie,
+        .ui_fai_bar{
+            width:93.5%;
+            margin:2% auto;
+            height:30%;
+            min-height:180px;
+        }
+        .ui_fai_pie{border:1px solid rgba(237,222,207,0.2);}
+
+    </style>
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" class="bg_org js-chart">
+    <header class="headerWrap">
+		<h2 class="lenovoTitle">FAI Search Result</h2>
+		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
+	</header>
+	<!-- /header -->
+    <div role="main" class="ui-content noFooter">
+        <div class="DateSearchTable">
+			<div class="dateRow">
+				<div class="dateCell-th">Begin</div>
+				<div class="dateCell-td">2013-10-14</div>
+			</div>
+			<div class="dateRow">
+				<div class="dateCell-th">End</div>
+				<div class="dateCell-td">2014-10-14</div>
+			</div>
+			<div class="dateRow">
+				<div class="dateCell-th">ODM</div>
+				<div class="dateCell-td">All</div>
+			</div>		
+		</div>
+		<div class="searchText"><i class="searR myico-arrowT1"></i></div>
+		<div class="Fai_idmCon">
+        	<h3 class="Fai_idmTitle">FAI Breakdown</h3>
+            <div id="ui_faiodm_pie" class="ui_fai_pie fai_search"></div>           
+            <h3 class="Fai_idmTitle">One Month Summary</h3>
+            <div id="ui_faiodm_bar" class="ui_fai_bar"></div>
+        </div>
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+<!-- Javascript with AMD 
+================================================== -->
+<script src="../js/require.js" data-main="../js/main" ></script>
+</body>
+</html>

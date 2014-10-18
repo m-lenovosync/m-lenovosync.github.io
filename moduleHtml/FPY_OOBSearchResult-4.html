@@ -1,0 +1,210 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LENOVO V2.0</title>
+    <meta name="description" content="">
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- IOS6全屏 Chrome高版本全屏
+================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metas
+================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/Qstop.css">
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" data-dom-cache="true" class="bg_blue2 js-chart">
+    <header class="headerWrap">
+		<h2 class="lenovoTitle">FPY/OOB Search Result</h2>
+		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
+	</header>
+	<!-- /header -->
+	<div role="main" class="ui-content noFooter">
+		<div class="DateSearchTable">
+			<div class="dateRow">
+				<div class="dateCell-th">Date</div>
+				<div class="dateCell-td">2013-10-14 &mdash; &mdash; 2014-10-14</div>
+			</div>
+			<div class="dateRow">
+				<div class="dateCell-th">Type</div>
+				<div class="dateCell-td">Ramp Up</div>
+			</div>
+			<div class="dateRow">
+				<div class="dateCell-th">ODM</div>
+				<div class="dateCell-td">All</div>
+			</div>
+			<div class="dateRow">
+				<div class="dateCell-th">Product</div>
+				<div class="dateCell-td">All</div>
+			</div>			
+		</div>
+		<div class="searchText"><i class="searR myico-arrowT1"></i></div>
+		<div class="eachBlockTitle_dt">
+			<h2 class="ebtd_h2">Product: <span>H520s</span></h2>
+			<div class="ebtd_table">
+				<div class="row">
+					<div class="cell-th">Mfg</div>
+					<div class="cell-td">Compal Brazil</div>
+				</div>
+				<div class="row">
+					<div class="cell-th">Input NO.</div>
+					<div class="cell-td">2014-09-16</div>
+				</div>
+				<div class="row">
+					<div class="cell-th">Category</div>
+					<div class="cell-td">Data from your mouse/finger</div>
+				</div>
+				<div class="row">
+					<div class="cell-th">SVT Exit</div>
+					<div class="cell-td">2014-08-12</div>
+				</div>
+				<div class="row">
+					<div class="cell-th">SS</div>
+					<div class="cell-td">2014-09-03</div>
+				</div>
+			</div>
+			<h3 class="ebtd_h3">
+				<span class="ebtd"><i class="myico-arrow_down"></i><em>92</em><b>%FPY</b></span>
+				<span class="ebtd"><i class="myico-arrow_up"></i><em>97</em><b>%OOB</b></span>
+			</h3>
+		</div>
+		<div class="Fpy_idmCon fpy_oob_result4">
+			<div id="chart_fpy_Line" style="width:100%;height:320px;"></div>
+		</div>
+		<div class="stop_odm">
+			<div class="stopTab">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td>Product:</td>
+						<td><span>G40-30</span></td>
+						<td>Phase:</td>
+						<td><span>SVT</span></td>
+					</tr>
+					<tr>
+						<td>FPY input:</td>
+						<td><span>80</span></td>
+						<td>FPY defect:</td>
+						<td><span>7</span></td>
+					</tr>
+					<tr>
+						<td>FPY Category:</td>
+						<td>&nbsp;</td>
+						<td>OOB input:</td>
+						<td><span>80</span></td>
+					</tr>
+					<tr>
+						<td>OOB defect:</td>
+						<td><span>0</span></td>
+						<td>OOB Category</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="stopTab">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td>Product:</td>
+						<td><span>G40-30</span></td>
+						<td>Phase:</td>
+						<td><span>SVT</span></td>
+					</tr>
+					<tr>
+						<td>FPY input:</td>
+						<td><span>80</span></td>
+						<td>FPY defect:</td>
+						<td><span>7</span></td>
+					</tr>
+					<tr>
+						<td>FPY Category:</td>
+						<td>&nbsp;</td>
+						<td>OOB input:</td>
+						<td><span>80</span></td>
+					</tr>
+					<tr>
+						<td>OOB defect:</td>
+						<td><span>0</span></td>
+						<td>OOB Category</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="stopTab">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td>Product:</td>
+						<td><span>G40-30</span></td>
+						<td>Phase:</td>
+						<td><span>SVT</span></td>
+					</tr>
+					<tr>
+						<td>FPY input:</td>
+						<td><span>80</span></td>
+						<td>FPY defect:</td>
+						<td><span>7</span></td>
+					</tr>
+					<tr>
+						<td>FPY Category:</td>
+						<td>&nbsp;</td>
+						<td>OOB input:</td>
+						<td><span>80</span></td>
+					</tr>
+					<tr>
+						<td>OOB defect:</td>
+						<td><span>0</span></td>
+						<td>OOB Category</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="stopTab tab_none">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td>Product:</td>
+						<td><span>G40-30</span></td>
+						<td>Phase:</td>
+						<td><span>SVT</span></td>
+					</tr>
+					<tr>
+						<td>FPY input:</td>
+						<td><span>80</span></td>
+						<td>FPY defect:</td>
+						<td><span>7</span></td>
+					</tr>
+					<tr>
+						<td>FPY Category:</td>
+						<td>&nbsp;</td>
+						<td>OOB input:</td>
+						<td><span>80</span></td>
+					</tr>
+					<tr>
+						<td>OOB defect:</td>
+						<td><span>0</span></td>
+						<td>OOB Category</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+			
+	</div>
+
+</div><!-- /page -->
+
+<!-- Javascript with AMD 
+================================================== -->
+<script src="../js/require.js" data-main="../js/main" ></script>
+</body>
+</html>

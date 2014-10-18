@@ -1,74 +1,125 @@
-<!DOCTYPE html>
+<!DOCTYPE >
 <html>
+<head>
+    <meta charset="utf-8">
+    <title>LENOVO V2.0</title>
+    <meta name="description" content="">
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- IOS6全屏 Chrome高版本全屏
+================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metas
+================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="M-lenovosync.github.io : 4">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form_con{
+                padding: 20px;
+            }
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>M-lenovosync.github.io</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/m-lenovosync">View on GitHub</a>
-
-          <h1 id="project_title">M-lenovosync.github.io</h1>
-          <h2 id="project_tagline">4</h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    </style>
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" class="bg_color_01 index-page">
+    <header class="headerWrap">
+        <!-- <h2 class="lenovoTitle"><a href="#" title="Lenovo" class="lenovoLogo"></a></h2> -->
+		<h2 class="lenovoTitle">EC</h2>
+		<a href="moduleHtml/User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
+		<a href="#" class="jqm-search-link ui-btn-right myico-search"></a>
+    </header>
+	<!-- /header -->
     
+	<div role="main" class="ui-content">
+        <div class="mainWrap" style="height:1000px;">
+        <div class="form_con">
+            <span class="form_checkbox_wrap">
+               <input type="checkbox" id="checkBox01" /><label for="checkBox01" class="form_checkbox">Unchecked Checkbox</label>
+            </span>
+            <br />
+            <br />
+            <span class="form_checkbox_wrap">
+               <input type="checkbox" id="checkBox02" checked /><label for="checkBox02" class="form_checkbox">Unchecked Checkbox</label>
+            </span>
+            <br />
+            <br />
+            <span class="form_radio_wrap">
+               <input type="radio" id="radio01" name="sex" /><label for="radio01" class="form_radio">男</label>
+            </span>
+            <span class="form_radio_wrap">
+               <input type="radio" id="radio02" name="sex" checked /><label for="radio02" class="form_radio">女</label>
+            </span>
+            <br />
+            <br />
+            <input type="date" class="form_date form_txt_style" id="startTime">
+            <br />
+            <br />
+            <input type="date" class="form_date form_txt_style" id="endTime">
+            <br />
+            <br />
+            <input type="text" class="form_txt_style">
+            <br />
+            <br />
+            <input type="button" class="form_btn form_btn_blue" value="SAVE">
+            <br />
+            <br />
+            <input type="button" class="form_btn form_btn_red" value="LOG OUT">
+            <br />
+            <br />
+            <input type="button" class="form_btn form_btn_green" value="Search">
+            <br />
+            <br />
+            <a href="#" class="btn_href"><i class="myico-user"></i>Basic Information</a>
+            <br />
+            <br />
+            <select name="" id="" class="form_select form_txt_style">
+                <option value="--Please Select--" selected>--Please Select--</option>
+                <option value="ShangHai">ShangHai</option>
+                <option value="Beijing">Beijing</option>
+                <option value="Tianjin">Tianjin</option>
+            </select>
+        </div>
+        </div>
+	</div><!-- /content -->
+    
+	<div data-role="footer" class="footerWrap">
+		<div class="navWrap">
+		    <a href="moduleHtml/Qstop_Odm.html" data-transition="slide" class="navList nav01">
+		        <i class="myico-nav01"></i>
+		        <p>Q-STOP</p>
+		    </a>
+		    <a href="moduleHtml/FPY_OOB_Odm.html" data-transition="slide" class="navList nav02">
+		        <i class="myico-nav02"></i>
+		        <p>FPY/OOB</p>
+		    </a>
+		    <a href="moduleHtml/Audit.html" data-transition="slide" class="navList nav03">
+		        <i class="myico-nav03"></i>
+		        <p>AUDIT</p>
+		    </a>
+		    <a href="moduleHtml/FAI.html" data-transition="slide" class="navList nav04">
+		        <i class="myico-nav04"></i>
+		        <p>FAI</p>
+		    </a>
+		    <a href="moduleHtml/EC.html" data-transition="slide" class="navList nav05">
+		        <i class="myico-nav05"></i>
+		        <p>EC</p>
+		    </a>
+		</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
 
-  </body>
+<!-- Javascript with AMD 
+================================================== -->
+<script src="js/require.js" data-main="js/main" ></script>
+</body>
 </html>
