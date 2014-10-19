@@ -1,5 +1,6 @@
 //配置页面加载模块参数
 require.config({
+	baseUrl: "http://192.168.0.101/webapp/js",
 	paths: {
 		"jquery"				:['jquery/jquery-2.1.1.min','http://cdn.bootcss.com/jquery/2.1.1/jquery.min','http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','jquery/jquery-2.1.1.min'],
 		"jqueryMobile"		:['jquery/jquery.mobile-1.3.0.min','http://libs.baidu.com/jquerymobile/1.3.0/jquery.mobile-1.3.0.min.js','jquery/jquery.mobile-1.3.0.min'],
@@ -20,12 +21,9 @@ require.config({
 		"index"				:"lib/index",
 		"app"				:"lib/app",
 		"rose": "lib/rose",
-		"rose02": "../../js/lib/rose",
 		'chart_qstop': 'echart/chart_qstop',
 		'page_chart_control': 'lib/page_chart_control',
 		'fai_home':'lib/fai_home',
-		'fai_home02':'../../js/lib/fai_home'
-		
 	},
 	shim: {//模块依赖关系
 		jquery			: {exports: '$'},

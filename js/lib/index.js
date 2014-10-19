@@ -1,23 +1,29 @@
-require(["jquery"],function($){
-    $( document ).on( "pagecreate", ".aduit-chart", function( event ) {
+//整体框架控制模块
+require(["jquery", "jqueryMobile"], function($) {
+    $(document).on("pagecreate", ".aduit-chart", function(event) {
         //ROSE module
-        if($('.aduit-chart').attr('data-page-name') == 'aduit'){
-            require(['rose02'],function(){	
+        if ($('.aduit-chart').attr('data-page-name') == 'aduit') {
+            require(['rose'], function() {
                 rosefunction();
             });
         }
     });
-	$( document ).on( "pagecreate", ".fai-chart", function( event ) {
-        //ROSE module
-        /*if($('.fai-chart').attr('data-page-name') == 'fai_home'){
-            require(['fai_home02'],function(){	
-                FaiChart();
+
+    $(window).hashchange(function() {
+        //var hash = location.hash;
+
+        // console.log(location.href);
+
+        //FAI home module
+        if ($(document).find('.fai_home').is('div')) {
+            require(['page_chart_control', 'fai_home'], function(LvPage, FaiPage) {
+                LvPage.init('fai_home');
+                FaiPage.initworldmap('#ui_fai_map');
+                // console.log(LvPage,FaiPage)
             });
-        }*/
+        }
+
     });
 });
-
-
-
 
   
