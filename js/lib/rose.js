@@ -2,7 +2,7 @@
 
 //HOME_AUDIT
 function home_aduit(target) {
-	
+	console.log(123)
 	var jsonpURL = "../jsonpcallback/jsonpcallback_audit.js";
 	var jsonpCallback = "homeaudit";
 	var jsonpCache;
