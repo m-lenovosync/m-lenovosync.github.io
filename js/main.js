@@ -1,6 +1,6 @@
 //配置页面加载模块参数
 require.config({
-    baseUrl:"http://m-lenovosync.github.io/js",
+    baseUrl: "/Lenovo/webapp/js",
 	paths: {
 		"jquery"				:['jquery/jquery-2.1.1.min','http://cdn.bootcss.com/jquery/2.1.1/jquery.min','http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','jquery/jquery-2.1.1.min'],
 		"jqueryMobile"		:['jquery/jquery.mobile-1.3.0.min','http://libs.baidu.com/jquerymobile/1.3.0/jquery.mobile-1.3.0.min.js','jquery/jquery.mobile-1.3.0.min'],
@@ -9,7 +9,7 @@ require.config({
 		'echarts/chart/line': 'echart/echarts-map',
 		'echarts/chart/bar' : 'echart/echarts-map',
 		'echarts/chart/map' : 'echart/echarts-map',
-		'echarts/chart/gauge' : 'echart/echarts-map',  
+		'echarts/chart/gauge': 'echart/echarts-map',
 		"echartsConfig"	:"echart/echartsConfig",
 		"chart_map"	:"echart/chart_map",
 		"chart_home"	:"echart/chart_home",
@@ -21,11 +21,12 @@ require.config({
 		"index"				:"lib/index",
 		"rose": "lib/rose",
 		'fai_home': 'echart/fai_home',
+		'chart_qstop': 'echart/chart_qstop',
 		'page_chart_control': 'lib/page_chart_control',
 	},
 	shim: {//模块依赖关系
 		jquery			: {exports: '$'},
-		'chart_map'	: {deps: ['echartsConfig']},
+		'chart_map': { deps: ['echartsConfig'] },
 		'chart_home'	: {deps: ['echartsConfig']},
 		'chart_fpyoob'	: {deps: ['echartsConfig']},
 		'chart_fpyoob_ramp'	: {deps: ['echartsConfig']},

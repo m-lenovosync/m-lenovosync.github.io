@@ -7,8 +7,6 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
         function LvFpyOob(container,chartType){
             MyChart.call(this, lvChart.echarts, lvChart.ecConfig, container, {}, 0, 0);
             this.chartType = chartType;
-            this.factoryName = 'LENOVO';
-            this.letter = 'A';
             this.getChartData(0);
         }
         iheritPrototype(LvFpyOob, MyChart);
@@ -38,7 +36,8 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
         };
         LvFpyOob.prototype._setOptionTimeLine = function(mydata){
             var option = {
-                timeline:{
+                timeline: {
+                    show:false,
                     y2:30,
                     data:['1','2','3','4','5','6', '7','8','9','10','11','12'], 
                     label : {
@@ -79,8 +78,8 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         tooltip : {'trigger':'axis'},
                         color:['#B7E1EA','#FFF100','#E2F3F6','rgba(255,255,255,0.3)'],
                         legend : {
-                            x:'right',
-                            y:120,
+                            x:10,
+                            y:10,
                             padding:25,
                             itemGap:25,
                             textStyle:{color: '#B7E1EA',fontSize:14},
@@ -104,10 +103,21 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         animationDuration:600,
                         grid : {
                             'x':70,
-                            'y':180,
+                            'y':120,
                             'x2':70,
-                            'y2':130,
+                            'y2':60,
                             borderWidth:0
+                        },
+                        dataZoom: {
+                            show: true,
+                            realtime: true,
+                            height: 15,
+                            //y:290,
+                            fillerColor: 'rgba(119, 223, 220,0.5)',
+                            handleColor: 'rgba(140, 227, 225,0.4)',
+                            start: 1,
+                            end:50,
+                            zoomLock: true//数据缩放锁，默认为false，当设置为true时选择区域不能伸缩，即(end - start)值保持不变
                         },
                         xAxis : [{
                             'type':'category',
@@ -202,13 +212,13 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
             option.options[0].series[3].data = target2;  
             this.option = option;
             this.loadStatus = true;
-            option = null;
+            return option;
         };
         LvFpyOob.prototype.getChartDataTimeLine = function(drawFlag){
             var self = this;
             var mydata = {
               legend:['FPY','OOB','FPY Target','OOB Target'],
-              xAxis:['TNID', 'CKSN', 'CKSD', 'WZSD', 'QSJD', 'BLDN', 'BJPD','SHPN', 'SHPD', 'HYPD', 'CDPD', 'WKSN', 'LCFC', 'PEGN','CCDN', 'WCDN', 'IUTN', 'INNB', 'WRGN', 'ITUD', 'BLDD'],
+              xAxis: ['wk41', 'wk40', 'wk39', 'wk38', 'wk37', 'wk36', 'wk35', 'wk34', 'wk33', 'wk32', 'wk31', 'wk30', 'wk29', 'wk28', 'wk27', 'wk26', 'wk25', 'wk24', 'wk23', 'wk22', 'wk21'],
               series_bar_1:{name:'FPY',data:[]},
               series_line_1:{name:'OOB',data:[]},
               series_bar_target:25,
@@ -231,8 +241,9 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
         //_setOptionTimeLine_2
         LvFpyOob.prototype._setOptionTimeLine_2 = function(mydata){
             var option = {
-                timeline:{
-                    y2:30,
+                timeline: {
+                    show:false,
+                    y2:50,
                     data:['1','2','3','4','5','6', '7','8','9','10','11','12'], 
                     label : {
                         'interval':0,
@@ -262,7 +273,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         title : {
                             'text':'',
                             x:40,
-                            y:20,
+                            y:10,
                             textStyle:{
                                 fontSize: 24, 
                                 fontWeight: 'normal',
@@ -273,7 +284,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         color:['#B7E1EA','#FFF100','#E2F3F6','rgba(255,255,255,0.3)'],
                         legend : {
                             x:'right',
-                            y:120,
+                            y:10,
                             padding:25,
                             itemGap:25,
                             textStyle:{color: '#B7E1EA',fontSize:14},
@@ -297,10 +308,21 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         animationDuration:600,
                         grid : {
                             'x':70,
-                            'y':180,
+                            'y':120,
                             'x2':70,
-                            'y2':130,
+                            'y2':60,
                             borderWidth:0
+                        },
+                        dataZoom: {
+                            show: true,
+                            realtime: true,
+                            height: 15,
+                            //y:290,
+                            fillerColor: 'rgba(119, 223, 220,0.5)',
+                            handleColor: 'rgba(140, 227, 225,0.4)',
+                            start: 1,
+                            end:50,
+                            zoomLock: true//数据缩放锁，默认为false，当设置为true时选择区域不能伸缩，即(end - start)值保持不变
                         },
                         xAxis : [{
                             'type':'category',
@@ -338,7 +360,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                                 'data': mydata.series_bar_1.data[0]
                             }, 
                             {
-                                'name':'OOB',
+                                'name': 'Monitor',
                                 'yAxisIndex':1,
                                 'type':'line',
                                 'smooth':true,
@@ -353,14 +375,14 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                                 'data': mydata.series_line_1.data[0]
                             },
                             {
-                                'name':'FPY Target',
+                                'name': 'Close',
                                 'type':'line',
                                 'yAxisIndex':0,
                                 'symbol':'none',
                                 'data': []
                             },
                             {
-                                'name':'OOB Target',
+                                'name':'irtc',
                                 'type':'line',
                                 'symbol':'none',
                                 'yAxisIndex':1,
@@ -395,13 +417,13 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
             option.options[0].series[3].data = target2;  
             this.option = option;
             this.loadStatus = true;
-            option = null;
+            return option;
         };
         LvFpyOob.prototype.getChartDataTimeLine_2 = function(drawFlag){
             var self = this;
             var mydata = {
-              legend:['FPY','OOB','FPY Target','OOB Target'],
-              xAxis: ['wk41', 'wk40', 'wk39', 'wk38', 'wk37', 'wk36', 'wk35', 'wk34', 'wk33', 'wk32', 'wk31', 'wk30', 'wk29', 'wk28', 'wk27', 'wk26', 'wk25', 'wk24', 'wk23', 'wk22', 'wk21'],
+                legend: ['FPY', 'OOB', 'FPY Target', 'OOB Target'],
+                xAxis: ['09-22', '09-23', '09-24', '09-25', '09-26', '09-27', '09-28', '09-30', '10-01', '10-02', '10-03', '10-04', '10-05', '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12', '10-13', '10-14', '10-15'],
               series_bar_1:{name:'FPY',data:[]},
               series_line_1:{name:'OOB',data:[]},
               series_bar_target:25,
@@ -420,6 +442,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
             self._setOptionTimeLine_2(mydata);
             drawFlag&&self.resetOption();
         };
+
 
         LvFpyOob.prototype._setOptionLine = function(mydata){
             var option = {

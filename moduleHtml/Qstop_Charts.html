@@ -24,19 +24,71 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" class="bg_blue js-chart">
+<div data-role="page" data-quicklinks="true" class="bg_blue js-chart chart_qstop_home"  data-page-name="qstop_home">
     <header class="headerWrap">
-		<h2 class="lenovoTitle chartsTab"><span class="chartsTab_l">MPA</span><span class="chartsTab_r cur">CHARTS</span></h2>
+		<h2 class="lenovoTitle chartsTab"><span class="chartsTab_l cur">SNAP SHOT</span><span class="chartsTab_r">CHARTS</span></h2>
 		<a href="User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
 		<a href="Qstop_SearchResult.html" class="jqm-search-link ui-btn-right myico-search"></a>
     </header>
 	<!-- /header -->
     <div role="main" class="ui-content">
-        <div class="chartsBox">
-        	<div class="chartHide">这里是放图表的位置</div>
-            <div>这里是放图表的位置33</div>
+        <div class="page_swicher_1">
+        <div id="mapSide">
+            <div class="mapSideBot height_firstp swiper-container">
+                <ul class="mslist swiper-wrapper">
+                    <li class="msEachlist swiper-slide">
+                        <div class="mapDataDetail">
+                            <h2 class="mdh2">
+                                <span class="mdh2_1">ODM Name:</span>
+                                <span class="mdh2_2">SHP_SH_DTA</span>
+                            </h2>
+                            <ul class="mdhlist">
+                                <li class="mdhli">
+                                    <span class="mli_l">Tgt</span>
+                                    <span class="mli_r">2.1M</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="msEachlist swiper-slide">
+                        <div class="mapDataDetail">
+                            <h2 class="mdh2">
+                                <span class="mdh2_1">ODM Name:</span>
+                                <span class="mdh2_2">SHP_SH_DTA</span>
+                            </h2>
+                            <ul class="mdhlist">
+                                <li class="mdhli">
+                                    <span class="mli_l">Tgt</span>
+                                    <span class="mli_r">2.1M</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="msEachlist swiper-slide">
+                        <div class="mapDataDetail">
+                            <h2 class="mdh2">
+                                <span class="mdh2_1">ODM Name:</span>
+                                <span class="mdh2_2">SHP_SH_DTA</span>
+                            </h2>
+                            <ul class="mdhlist">
+                                <li class="mdhli">
+                                    <span class="mli_l">Tgt</span>
+                                    <span class="mli_r">2.1M</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-	</div><!-- /content -->
+        </div>
+        <div class="chartsBox">
+            <div id="mapWrap" class="chartsCon" style="width:100%;height:745px;"></div>
+            <div id="chart_home_bar" class="chartsCon chartHide" style="width:100%;height:600px;"></div>
+        </div>
+        
+    </div>
+    <!-- /content -->
 
 	<!-- footer -->
 	<div data-role="footer" class="footerWrap">

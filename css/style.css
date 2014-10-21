@@ -485,8 +485,8 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
     text-decoration: none;
     padding: 8px 0 5px;
 }
-.navWrap a.navList:hover,.navWrap a.navList:active{
-    color: #64a091;
+.navWrap a.navList:hover,.navWrap a.navList:active,.navWrap a.navList:hover i,.navWrap a.navList:active i{
+    color: #4d93ac;
 }
 .navWrap a.nav01{background-color: rgba(0,0,0,0.8);}
 .navWrap a.nav02{background-color: rgba(0,0,0,0.7);}
@@ -499,7 +499,7 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
     padding-bottom: 10px;
 }
 .navWrap a.navList i,.navWrap a.navList p{
-    opacity: 0.6;
+/*    opacity: 0.6;*/
 }
 
 
@@ -602,6 +602,8 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
     cursor: pointer;
 }
 .form_btn{
+    display: inline-block;
+    text-decoration: none;
     background: none;
     border: 0;
     font-size: 13px;
@@ -611,6 +613,8 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
     outline: none;
     width: 100%;
     height: 36px;
+    text-align: center;
+    line-height: 36px;
     border-radius: 5px;
     -webkit-border-radius:5px; /* for safari 6 */
 	-webkit-appearance: none;
@@ -1388,25 +1392,41 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 	margin-top:4px;
 	background:rgba(255, 255, 255 ,0.2);
 	cursor:pointer;
+    height:27px;
+    display:inline-block;
+    padding: 0 10px;
 }
 .chartsTab_l {
-	width:64px;
-	height:27px;
 	border-radius:15px 0 0 15px;
-	display:inline-block;
 }
 .chartsTab_r {
-	width:64px;
-	height:27px;
 	border-radius:0 15px 15px 0;
-	display:inline-block;
 }
 .chartsTab span.cur {
 	color:#fff;
 	background:rgba(0, 0, 0 ,0.2);
 }
 .Fai_idmCon {
-	
+    width: 100%;
+    height: 100%;
+	position: relative;
+}
+.chartsBox{
+    width: 100%;
+    height: 100%;
+	position: relative;
+}
+.chartsBox .chartsCon{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.Fai_idmCon .Fai_idmBox{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .Fai_idmTitle {
 	font-weight:normal;
@@ -1416,7 +1436,7 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 	padding:10px 0 0 10px;
 }
 .chartHide {
-	display:none;
+    visibility: hidden;
 }
 
 .eachBlockTitle_dt {
@@ -1582,7 +1602,9 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 	-o-animation: anibgc 1s cubic-bezier(0, 1.03, .25, .99) both;
 	animation:anibgc 1s cubic-bezier(0, 1.03, .25, .99) both ;
 }
-
+.eb_audit_items a{
+    text-decoration: none;
+}
 @-webkit-keyframes anibgc {
 	from { opacity:0; -webkit-transform: translateY(-100px) translateZ(0); transform: translateY(-100px) translateZ(0)}
 	to {  opacity: 1; -webkit-transform:  translateY(0px) translateZ(0); transform:  translateY(0px) translateZ(0)}
@@ -1649,7 +1671,7 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 .ui_auditodm_title>span{font-size:0.5em;}
 .ui_auditodm_title .eai_state{	
 	display:inline-block;
-	font-family:"lsicons";
+	font-family:"myico";
 	color:#fff;
 	text-align:center;
 	width:36px;
@@ -1657,6 +1679,8 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 }
 
 .ui_auditodm_chart{
+    width: 100%;
+/*    margin-left: -20%;*/
 	height:175px;
 }
 
@@ -1698,3 +1722,118 @@ only screen and (min-device-pixel-ratio: 2) {
     
     
 }
+/*
+===========index.html 地图右侧数据列表    ===========
+*/
+.mapSideBot {
+	margin-top: 24px;
+	/*如果有生之年能看到这个样式被其它浏览器支持，请Mail告诉我*/
+	mask-image:url(../images/mapsidemask.png);
+	mask-size:100% 100%;
+	mask-position-x:0;
+	mask-position-y:0;
+	
+	-moz-mask-image:url(../images/mapsidemask.png);
+	-moz-mask-size:100% 100%;
+	-moz-mask-position-x:0;
+	-moz-mask-position-y:0;
+	
+	-ms-mask-image:url(../images/mapsidemask.png);
+	-ms-mask-size:100% 100%;
+	-ms-mask-position-x:0;
+	-ms-mask-position-y:0;
+	
+	-webkit-mask-image:url(../images/mapsidemask.png);
+	-webkit-mask-size:100% 100%;
+	-webkit-mask-position-x:0;
+	-webkit-mask-position-y:0;
+}
+#mapSide {
+	float:left;
+	width: 100%;
+	height: 130px;
+}
+.mslist {
+	color: #fff;
+}
+.mslist .msEachlist{
+	width:100%;
+	padding: 10px 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.mslist .msEachlist:hover .mapDataDetail {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+.mapDataDetail {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: solid 1px rgba(255, 255, 255, 0);
+	padding: 10px;
+}
+
+.swiper-slide-click-active .mapDataDetail {
+	border: solid 1px rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+.mdh2 {
+	line-height: 56px;
+	font-size: 30px;
+	color: #fff;
+	border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+	font-weight: normal;
+}
+.mdh2 .mdh2_1{
+	
+}
+.mdh2 .mdh2_2{
+	font-size: 32px;
+}
+
+.mdhlist {
+	
+}
+.mdhlist .mdhli{
+	overflow: hidden;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.mdhli .mli_l {
+	float: left;
+}
+.mdhli .mli_r {
+	float: right;
+	color: #ffe900;
+}
+.mapswipebtn,.pageswipebtn {
+	height: 56px;
+	line-height: 56px;
+	padding: 0 52px;
+	border: solid 2px #fff;
+	font-size: 24px;
+	color: #fff;
+	float: left;
+	display: block;
+	border-radius: 50px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.mapswipebtn.cur,.pageswipebtn.cur {
+	background-color: #fff;
+	color: #0093ba;
+}
+#mapWrap {
+	height: 100%;
+	margin-right: 444px;
+	margin-left: 40px;
+	/*background: #000;*/
+}
+
+/*
+《=======index.html 地图右侧数据列表=结束=======》
+*/

@@ -78,42 +78,42 @@ function home_aduit(target) {
 }
 
 
-function setchart_bar_auditodm(){	 
-        require(["chart_audit"],function(LvAudit){ //AUDIT
-			var gauge = new LvAudit('chart_auditOdm_bar','bar2');
-			gauge.resetOption();			
-		});
-}
+//function setchart_bar_auditodm(){	 
+//        require(["chart_audit"],function(LvAudit){ //AUDIT
+//			var gauge = new LvAudit('chart_auditOdm_bar','bar2');
+//			gauge.resetOption();			
+//		});
+//}
 
-function setchart_faiodm(){	
-	var LvPage = {
-		chartArr:[]
-	};
-	require(["chart_fai"],function(LvFai){ //AUDIT
-					var pie = new LvFai('ui_faiodm_pie','pie'),
-						bar = new LvFai('ui_faiodm_bar','bar_2');
-					LvPage.chartArr.push(pie, bar);
-					LvPage.resetOptionChart();
-				});
+//function setchart_faiodm(){	
+//	var LvPage = {
+//		chartArr:[]
+//	};
+//	require(["chart_fai"],function(LvFai){ //AUDIT
+//					var pie = new LvFai('ui_faiodm_pie','pie'),
+//						bar = new LvFai('ui_faiodm_bar','bar_2');
+//					LvPage.chartArr.push(pie, bar);
+//					LvPage.resetOptionChart();
+//				});
 	
-	LvPage.resizeChart = function(){//resize图表
-		$(window).off(".page");
-		$(window).on('resize.page',function() {
-			$.each(LvPage.chartArr,function(k,v){
-				v.chart.resize();
-				v.bindEvents();
-			});
-		});
-	};
-	LvPage.resetOptionChart = function(){//绘制chart
-		console.log(1)
-		$.each(LvPage.chartArr,function(k,v){
-			v.resetOption();
-		});
-		LvPage.resizeChart();
-	};
-	return LvPage;
-}
+//	LvPage.resizeChart = function(){//resize图表
+//		$(window).off(".page");
+//		$(window).on('resize.page',function() {
+//			$.each(LvPage.chartArr,function(k,v){
+//				v.chart.resize();
+//				v.bindEvents();
+//			});
+//		});
+//	};
+//	LvPage.resetOptionChart = function(){//绘制chart
+//		console.log(1)
+//		$.each(LvPage.chartArr,function(k,v){
+//			v.resetOption();
+//		});
+//		LvPage.resizeChart();
+//	};
+//	return LvPage;
+//}
 
 function rosefunction(){
 
@@ -123,11 +123,11 @@ function rosefunction(){
 	$html=$("html");
 
 	home_aduit(".eb_audit_inner");
-	if($("#chart_auditOdm_bar").length>0){
-		setchart_bar_auditodm();
-	}
-	if($("#ui_faiodm_pie").length>0){
-		setchart_faiodm();
-	}
+	//if($("#chart_auditOdm_bar").length>0){
+	//	setchart_bar_auditodm();
+	//}
+	//if($("#ui_faiodm_pie").length>0){
+	//	setchart_faiodm();
+	//}
 	
 }

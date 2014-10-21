@@ -19,103 +19,45 @@
 ================================================== -->
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .form_con{
-                padding: 20px;
-            }
-
-    </style>
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" class="bg_color_01 index-page">
+<div data-role="page" data-quicklinks="true" class="bg_blue js-chart chart_qstop_home"  data-page-name="qstop_home">
     <header class="headerWrap">
-        <!-- <h2 class="lenovoTitle"><a href="#" title="Lenovo" class="lenovoLogo"></a></h2> -->
-		<h2 class="lenovoTitle">Index</h2>
-		<a href="moduleHtml/User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
-<!--		<a href="#" class="jqm-search-link ui-btn-right myico-search"></a>-->
+		<h2 class="lenovoTitle chartsTab"><span class="chartsTab_l cur">SNAP SHOT</span><span class="chartsTab_r">CHARTS</span></h2>
+		<a href="User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
+		<a href="Qstop_SearchResult.html" class="jqm-search-link ui-btn-right myico-search"></a>
     </header>
 	<!-- /header -->
-    
-	<div role="main" class="ui-content">
-	    <div style="font-size:20px; color:#fff; text-align:center; margin-top:180px;">
-	        请点击各个位置菜单查看内页
-	    </div>
-<!--
-        <div class="mainWrap" style="height:1000px;">
-        <div class="form_con">
-            <span class="form_checkbox_wrap">
-               <input type="checkbox" id="checkBox01" /><label for="checkBox01" class="form_checkbox">Unchecked Checkbox</label>
-            </span>
-            <br />
-            <br />
-            <span class="form_checkbox_wrap">
-               <input type="checkbox" id="checkBox02" checked /><label for="checkBox02" class="form_checkbox">Unchecked Checkbox</label>
-            </span>
-            <br />
-            <br />
-            <span class="form_radio_wrap">
-               <input type="radio" id="radio01" name="sex" /><label for="radio01" class="form_radio">男</label>
-            </span>
-            <span class="form_radio_wrap">
-               <input type="radio" id="radio02" name="sex" checked /><label for="radio02" class="form_radio">女</label>
-            </span>
-            <br />
-            <br />
-            <input type="date" class="form_date form_txt_style" id="startTime">
-            <br />
-            <br />
-            <input type="date" class="form_date form_txt_style" id="endTime">
-            <br />
-            <br />
-            <input type="text" class="form_txt_style">
-            <br />
-            <br />
-            <input type="button" class="form_btn form_btn_blue" value="SAVE">
-            <br />
-            <br />
-            <input type="button" class="form_btn form_btn_red" value="LOG OUT">
-            <br />
-            <br />
-            <input type="button" class="form_btn form_btn_green" value="Search">
-            <br />
-            <br />
-            <a href="#" class="btn_href"><i class="myico-user"></i>Basic Information</a>
-            <br />
-            <br />
-            <select name="" id="" class="form_select form_txt_style">
-                <option value="--Please Select--" selected>--Please Select--</option>
-                <option value="ShangHai">ShangHai</option>
-                <option value="Beijing">Beijing</option>
-                <option value="Tianjin">Tianjin</option>
-            </select>
+    <div role="main" class="ui-content">
+        <div class="chartsBox">
+        	<div id="mapWrap" class="chartsCon" style="width:100%;height:745px;"></div>
+            <div id="chart_home_bar" class="chartsCon chartHide" style="width:100%;height:600px;"></div>
         </div>
-        </div>
--->
 	</div><!-- /content -->
-    
+
+	<!-- footer -->
 	<div data-role="footer" class="footerWrap">
 		<div class="navWrap">
-		    <a href="moduleHtml/Qstop_Charts.html" data-transition="slide" class="navList nav01">
+		    <a href="Qstop_Charts.html" data-transition="slide" class="navList nav01">
 		        <i class="myico-nav01"></i>
 		        <p>Q-STOP</p>
 		    </a>
-		    <a href="moduleHtml/FPY_OOB_Odm.html" data-transition="slide" class="navList nav02">
+		    <a href="FPY_OOB_Odm.html" data-transition="slide" class="navList nav02">
 		        <i class="myico-nav02"></i>
 		        <p>FPY/OOB</p>
 		    </a>
-		    <a href="moduleHtml/Audit.html" data-transition="slide" class="navList nav03">
+		    <a href="Audit.html" data-transition="slide" class="navList nav03">
 		        <i class="myico-nav03"></i>
 		        <p>AUDIT</p>
 		    </a>
-		    <a href="moduleHtml/FAI.html" data-transition="slide" class="navList nav04">
+		    <a href="FAI.html" data-transition="slide" class="navList nav04">
 		        <i class="myico-nav04"></i>
 		        <p>FAI</p>
 		    </a>
-		    <a href="moduleHtml/EC.html" data-transition="slide" class="navList nav05">
+		    <a href="EC.html" data-transition="slide" class="navList nav05">
 		        <i class="myico-nav05"></i>
 		        <p>EC</p>
 		    </a>

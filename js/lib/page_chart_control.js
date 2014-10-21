@@ -6,11 +6,18 @@ define(function(){
 		console.log('initchart');
 		LvPage.disposeChart();
 		switch(pageName){
+            case "fpy_ood_odm_result":
+				require(["chart_fpyoob"],function(LvAudit){ //AUDIT
+                   var timeLine_2 = new LvAudit('fpy_ood_line01','line');
+                   var timeLine_3 = new LvAudit('fpy_ood_line02','line');
+					LvPage.chartArr.push(timeLine_2,timeLine_3);
+					LvPage.resetOptionChart();
+				});
+				break;
 			case "audit_odm":
 				require(["chart_audit"],function(LvAudit){ //AUDIT
-					var bar = new LvAudit('chart_auditOdm_bar','bar2'),
-							timeLine = new LvAudit('chart_auditOdm_timeLine','timeLine');
-					LvPage.chartArr.push(bar, timeLine);
+				    var gauge = new LvAudit('chart_auditOdm_bar', 'bar2');
+				    LvPage.chartArr.push(gauge);
 					LvPage.resetOptionChart();
 				});
 				break;
@@ -88,8 +95,21 @@ define(function(){
 				    }
 				});
 				break;
+		    case "qstop_home":
+		        
+		        require(["chart_map"], function (LvMap) {
+		            var map = new LvMap('mapWrap');
+		            LvPage.chartArr.push(map);
+		            //LvPage.resetOptionChart();
+		        });
+		        require(["chart_qstop"], function (lvqstop) {
+		            var bar = new lvqstop('chart_home_bar');
+		            LvPage.chartArr.push(bar);
+		            LvPage.resetOptionChart();
+		        });
+		        break;
 			case "qstop_result":
-			    require(["chart_qstop"], function (LvQStop) {//首页chart页
+			    require(["chart_qstop"], function (LvQStop) {
 			        var bar = new LvQStop('chart_qstop_bar');
 			        LvPage.chartArr.push(bar);
 			        LvPage.resetOptionChart();
@@ -117,7 +137,7 @@ define(function(){
 			});
 		});
 	};
-	LvPage.resetOptionChart = function(){//绘制chart
+	LvPage.resetOptionChart = function () {//绘制chart
 		$.each(LvPage.chartArr,function(k,v){
 			v.resetOption();
 		});
