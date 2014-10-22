@@ -20,14 +20,14 @@
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div data-role="page" data-quicklinks="true" class="bg_blue2 index-page fpy_ood_odm" data-page-name="fpy_ood_odm">
     <header class="headerWrap">
-		<h2 class="lenovoTitle chartsTab"><span class="chartsTab_l cur">LENOVO</span><span class="chartsTab_r">THINK</span></h2>
+		<h2 class="lenovoTitle chartsTab"><span class="chartsTab_l cur">RAMP UP</span><span class="chartsTab_r">MP</span></h2>
 		<a href="User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
 		<a href="FPY_Search.html" data-transition="slide" class="jqm-search-link ui-btn-right myico-search"></a>
     </header>
@@ -41,9 +41,52 @@
                     <li><span class="myico-pc03"></span></li>
                     <li><span class="myico-pc04"></span></li>
                 </ul>
+                <div class="chartsTab">
+                    <a href="javascript:void(0)" class="chartsTabTag cur"><font>LENOVO</font></a>
+                    <i class="listDot"></i>
+                    <a href="javascript:void(0)" class="chartsTabTag"><font>THINK</font></a>
+                </div>
                 <div class="LenovoIconBox">
                 	<div>
-                        <div id="fpy_ood_line01" style="width:100%; height:500px; margin-bottom:20px;"></div>
+                        <div class="eachBlockTitle_dt">
+                            <h2 class="ebtd_h2">Product: <span>H520s</span></h2>
+                            <div class="ebtd_table">
+                                <div class="row">
+                                    <div class="cell-th">Mfg</div>
+                                    <div class="cell-td">Compal Brazil</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-th">SS</div>
+                                    <div class="cell-td">2014-09-03</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-th">Phase</div>
+                                    <div class="cell-td">2014-09-16</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-th">TOP1</div>
+                                    <div class="cell-td">Data from your mouse/finger</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-th">TOP2</div>
+                                    <div class="cell-td">Data from your mouse/finger</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell-th">Input Q'ty</div>
+                                    <div class="cell-td">2014-08-12</div>
+                                </div>
+                            </div>
+                            <h3 class="ebtd_h3">
+                                <span class="ebtd"><i class="myico-arrow_down"></i><em>92</em><b>%FPY</b></span>
+                                <span class="ebtdLine"></span>
+                                <span class="ebtd"><i class="myico-arrow_up"></i><em>97</em><b>%OOB</b></span>
+                            </h3>
+                        </div>
+                        <div class="t-box-wrap t-box">
+                            <div class="font-bg">SVT</div>
+<!--                            <div class="LenovoIconBox t-box" id="fpy_ood_line01"></div>-->
+                            <div class="LenovoIconBox t-box" id="fpy_ood_line01"></div>
+                        </div>
                         <div class="stop_odm">
                             <div class="stopTab">
                                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -171,6 +214,11 @@
                     <li><span class="myico-pc03"></span></li>
                     <li><span class="myico-pc04"></span></li>
                 </ul>
+                <div class="chartsTab">
+                    <a href="javascript:void(0)" class="chartsTabTag cur"><font>LENOVO</font></a>
+                    <i class="listDot"></i>
+                    <a href="javascript:void(0)" class="chartsTabTag"><font>THINK</font></a>
+                </div>
                 <div class="ThinkBox">
                 	<div>
                         <div class="eachBlockTitle_dt">
@@ -203,7 +251,12 @@
                             </h3>
                         </div>
                 	</div>
-                	<div id="fpy_ood_line02" style="width:100%; height:500px;"></div>
+                	<div class="t-box-wrap t-box">
+                        <div class="font-bg">MAY</div>
+<!--                            <div class="LenovoIconBox t-box" id="fpy_ood_line01"></div>-->
+                        <div class="LenovoIconBox t-box" id="fpy_ood_line02"></div>
+                    </div>
+<!--                	<div id="fpy_ood_line02" style="width:100%; height:500px;"></div>-->
                     <div class="chartHide">不知道长什么样2</div>
                     <div class="chartHide">不知道长什么样3</div>
                     <div class="chartHide">不知道长什么样4</div>
@@ -215,11 +268,11 @@
 	<!-- footer -->
 	<div data-role="footer" class="footerWrap">
 		<div class="navWrap">
-		    <a href="Qstop_Charts.html" data-transition="slide" class="navList nav01">
+		    <a href="index.html" data-transition="slide" class="navList nav01">
 		        <i class="myico-nav01"></i>
 		        <p>Q-STOP</p>
 		    </a>
-		    <a href="Qstop_Charts.html" data-transition="slide" class="navList nav02">
+		    <a href="FPY_OOB_Odm.html" data-transition="slide" class="navList nav02 cur">
 		        <i class="myico-nav02"></i>
 		        <p>FPY/OOB</p>
 		    </a>
@@ -241,6 +294,6 @@
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>
+<script src="js/require.js" data-main="js/main" ></script>
 </body>
 </html>

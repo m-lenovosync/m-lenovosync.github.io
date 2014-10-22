@@ -101,10 +101,10 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                     data: ['Approved', 'Failed','Name']
                 },
                 grid:{
-                    x:60,
+                    x:35,
                     y:10,
-                    x2:30,
-                    y2:60,
+                    x2:10,
+                    y2:50,
                     borderWidth:0
                     //backgroundColor:'rgba(200,200,200,0.2)'
                 },
@@ -132,8 +132,8 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                 },
                 dataZoom: {
                     show: true,
-                    realtime: true,
-                    height:15,
+                    realtime: false,
+                    height:17,
                     //y:290,
                     backgroundColor:'rgba(111, 86, 62,0.5)',
                     dataBackgroundColor: 'rgba(255, 174, 95,0.4)',            

@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Transitions - jQuery Mobile Demos</title>
 	<link rel="shortcut icon" href="../favicon.ico">
-	<link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" class="bg_blue01 aduit-chart" data-page-name="aduit">
+<div data-role="page" data-quicklinks="true" class="bg_purple01 aduit-chart" data-page-name="aduit">
     <header class="headerWrap">
 		<h2 class="lenovoTitle">AUDIT</h2>
 		<a href="User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
@@ -21,6 +21,7 @@
 	<div role="main" class="ui-content">
        <div class="mainWrap basefont ui_audit">
            <div class="eb_audit_inner">
+<!--
                <div class="eb_audit_items blue_0">
                    <a href="Audit_ODM.html" data-transition="slide">
                        <div class="vam clearfix">
@@ -35,14 +36,16 @@
                     <a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_1.png);"></div>		<div class="eai_score">95</div>		<div class="eai_comname">wistron_ZS</div>		<div class="eai_state up"></div>	</div>	</a></div>
                 <div class="eb_audit_items yellow_0"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_2.png);"></div>		<div class="eai_score">94</div>		<div class="eai_comname">Compal</div>		<div class="eai_state down"></div>	</div>	</a></div>
                 <div class="eb_audit_items yellow_1"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_3.png);"></div>		<div class="eai_score">85</div>		<div class="eai_comname">Quanta</div>		<div class="eai_state"></div>	</div>	</a></div>
-                <div class="eb_audit_items yellow_2"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_4.png);"></div>		<div class="eai_score">90</div>		<div class="eai_comname">Bitand</div>		<div class="eai_state up"></div>	</div>	</a></div><div class="eb_audit_items red_0"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_5.png);"></div>		<div class="eai_score">50</div>		<div class="eai_comname">LCFC</div>		<div class="eai_state down"></div>	</div>	</a></div></div>
+                <div class="eb_audit_items yellow_2"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_4.png);"></div>		<div class="eai_score">90</div>		<div class="eai_comname">Bitand</div>		<div class="eai_state up"></div>	</div>	</a></div><div class="eb_audit_items red_0"><a href="Audit_ODM.html" data-transition="slide">	<div class="vam clearfix">		<div class="eai_logo" style="background-image: url(http://192.168.1.156/Lenovo/webapp/images/sample/eai_logo_5.png);"></div>		<div class="eai_score">50</div>		<div class="eai_comname">LCFC</div>		<div class="eai_state down"></div>	</div>	</a></div>
+-->
+                </div>
        </div>
 	</div><!-- /content -->
     
 	<!-- footer -->
 	<div data-role="footer" class="footerWrap">
 		<div class="navWrap">
-		    <a href="Qstop_Charts.html" data-transition="slide" class="navList nav01">
+		    <a href="index.html" data-transition="slide" class="navList nav01">
 		        <i class="myico-nav01"></i>
 		        <p>Q-STOP</p>
 		    </a>
@@ -50,7 +53,7 @@
 		        <i class="myico-nav02"></i>
 		        <p>FPY/OOB</p>
 		    </a>
-		    <a href="Audit.html" data-transition="slide" class="navList nav03">
+		    <a href="Audit.html" data-transition="slide" class="navList nav03 cur">
 		        <i class="myico-nav03"></i>
 		        <p>AUDIT</p>
 		    </a>
@@ -71,6 +74,6 @@
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>	
+<script src="js/require.js" data-main="js/main" ></script>	
 </body>
 </html>

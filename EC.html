@@ -20,12 +20,12 @@
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" data-dom-cache="true" class="bg_color_01 js-chart">
+<div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_color_01 js-chart">
     <header class="headerWrap">
 		<h2 class="lenovoTitle">EC</h2>
 		<a href="javascript:void(0)" data-rel="back" class="jqm-navmenu-link ui-btn-left myico-user"></a>
@@ -123,7 +123,7 @@
 	<!-- footer -->
 	<div data-role="footer" class="footerWrap">
 		<div class="navWrap">
-		    <a href="Qstop_Charts.html" data-transition="slide" class="navList nav01">
+		    <a href="index.html" data-transition="slide" class="navList nav01">
 		        <i class="myico-nav01"></i>
 		        <p>Q-STOP</p>
 		    </a>
@@ -139,7 +139,7 @@
 		        <i class="myico-nav04"></i>
 		        <p>FAI</p>
 		    </a>
-		    <a href="EC.html" data-transition="slide" class="navList nav05">
+		    <a href="EC.html" data-transition="slide" class="navList nav05 cur">
 		        <i class="myico-nav05"></i>
 		        <p>EC</p>
 		    </a>
@@ -150,6 +150,6 @@
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>
+<script src="js/require.js" data-main="js/main" ></script>
 </body>
 </html>

@@ -20,56 +20,23 @@
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" class="bg_blue js-chart chart_qstop_result" data-page-name="qstop_result">
-     <header class="headerWrap">
-		<h2 class="lenovoTitle">Q-Stop Search Result</h2>
-		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
-	</header>
+<div data-role="page" data-quicklinks="true" class="bg_blue js-chart">
+    <header class="headerWrap">
+		<h2 class="lenovoTitle">
+        	<select class="form_select form_txt_style" id="" name="">
+                <option selected="" value="--Please Select--">--Please Select--</option>
+                <option value="ShangHai">OVER ALL</option>
+            </select></h2>
+		<a href="User_Center.html" data-transition="slide" class="jqm-navmenu-link ui-btn-left myico-user"></a>
+		<a href="Qstop_Search.html" data-transition="slide" class="jqm-search-link ui-btn-right myico-search"></a>
+    </header>
 	<!-- /header -->
-    <div role="main" class="ui-content noFooter">
-        <div class="DateSearchTable">
-			<div class="dateRow">
-				<div class="dateCell-th">Begin</div>
-				<div class="dateCell-td">2013-10-14</div>
-			</div>
-			<div class="dateRow">
-				<div class="dateCell-th">End</div>
-				<div class="dateCell-td">2013-10-14</div>
-			</div>
-			<div class="dateRow">
-				<div class="dateCell-th">ODM</div>
-				<div class="dateCell-td">All</div>
-			</div>
-			<div class="dateRow">
-				<div class="dateCell-th">Issue Type</div>
-				<div class="dateCell-td">Alert Q-stop Case Record</div>
-			</div>
-            <div class="dateRow">
-				<div class="dateCell-th">Issue Category</div>
-				<div class="dateCell-td">Design MFG Supplier  Engineering</div>
-			</div>
-            <div class="dateRow">
-				<div class="dateCell-th">OS</div>
-				<div class="dateCell-td">Windows Android DOS  Linux Google</div>
-			</div>
-            <div class="dateRow">
-				<div class="dateCell-th">GEO</div>
-				<div class="dateCell-td">EMEA AG PRC EAP MAP</div>
-			</div>
-            <div class="dateRow">
-				<div class="dateCell-th">Product</div>
-				<div class="dateCell-td">All</div>
-			</div>	
-		</div>
-        <div class="searchText"><i class="searR myico-arrowT1"></i></div>
-        <div class="Fpy_idmCon">      
-            <div id="chart_qstop_bar" class="ui_qstop_bar"></div>
-        </div>
+    <div role="main" class="ui-content">
         <div class="stop_odm">
         	<div class="stopTab">
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -173,10 +140,36 @@
             </div>
         </div>
 	</div><!-- /content -->
+
+	<!-- footer -->
+	<div data-role="footer" class="footerWrap">
+		<div class="navWrap">
+		    <a href="index.html" data-transition="slide" class="navList nav01 cur">
+		        <i class="myico-nav01"></i>
+		        <p>Q-STOP</p>
+		    </a>
+		    <a href="FPY_OOB_Odm.html" data-transition="slide" class="navList nav02">
+		        <i class="myico-nav02"></i>
+		        <p>FPY/OOB</p>
+		    </a>
+		    <a href="Audit.html" data-transition="slide" class="navList nav03">
+		        <i class="myico-nav03"></i>
+		        <p>AUDIT</p>
+		    </a>
+		    <a href="FAI.html" data-transition="slide" class="navList nav04">
+		        <i class="myico-nav04"></i>
+		        <p>FAI</p>
+		    </a>
+		    <a href="EC.html" data-transition="slide" class="navList nav05">
+		        <i class="myico-nav05"></i>
+		        <p>EC</p>
+		    </a>
+		</div>
+	</div><!-- /footer -->
 </div><!-- /page -->
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>
+<script src="js/require.js" data-main="js/main" ></script>
 </body>
 </html>

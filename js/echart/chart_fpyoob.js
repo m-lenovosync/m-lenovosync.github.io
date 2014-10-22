@@ -28,169 +28,140 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
             switch(this.chartType){
                 case "timeLine":
                     this.chart.on(lvChart.ecConfig.EVENT.CLICK, function(param){
-                        page_modules.loadinto("moduleHtml/FPY_OOB_In.html", ".eachBlck" ,"demopagec-2 switch_2","fpyoob_in");
+                    
                     }); 
                     break;
                 default:break;
             }
-            var self = this;
-            
         };
         LvFpyOob.prototype._setOptionTimeLine = function(mydata){
             var option = {
-                timeline:{
-                    y2:30,
-                    data:['1','2','3','4','5','6', '7','8','9','10','11','12'], 
-                    label : {
-                        'interval':0,
-                        textStyle: {
-                            color: 'rgba(255,255,255,0.65)'
-                        },
-                        formatter : function(s) {
-                            var month = ['', 'Jay.','Feb.','Mar.','Apr.','May.','Jun.', 'Jul.','Aug.','Sept.','Oct.','Nov.','Dec.'];
-                            return month[s];
-                        }
-                    },
-                    symbol:'emptyCircle',
-                    lineStyle:{color: 'rgba(255,255,255,0.7)', width: 1, type: 'solid'},
-                    checkpointStyle:{
-                        borderColor : '#076377',
-                        borderWidth : 1
-                    },
-                    controlStyle:{
-                        normal : { color : '#E2F3F6'},
-                        emphasis : { color : '#E2F3F6'}
-                    },  
-                    autoPlay : false,
-                    playInterval : 3000
+                title : {
+                    'text':'',
+                    x:40,
+                    y:20,
+                    textStyle:{
+                        fontSize: 24, 
+                        fontWeight: 'normal',
+                        color: '#fff'
+                    }
                 },
-                options:[
+                tooltip : {'trigger':'axis'},
+                color:['#B7E1EA','#FFF100','#E2F3F6','rgba(255,255,255,0.3)'],
+                legend : {
+                    x:20,
+                    y:5,
+                    padding:15,
+                    itemGap:8,
+                    textStyle:{color: '#B7E1EA',fontSize:14},
+                    'data':mydata.legend
+                },
+                dataZoom: {
+                    show: true,
+                    realtime: true,
+                    x:35,
+                    backgroundColor:'rgba(61, 72, 82,0.5)',
+                    dataBackgroundColor: 'rgba(90, 99, 107,1)',            
+                    fillerColor: 'rgba(156, 161, 166,0.5)',
+                    handleColor: 'rgba(249, 115, 96, 1)',
+                    start: 5,
+                    end: 35
+                },
+                toolbox : {
+                    'show':false, 
+                    orient : 'vertical',
+                    x: 'right', 
+                    y: 'center',
+                    'feature':{
+                        'mark':{'show':true},
+                        'dataView':{'show':true,'readOnly':false},
+                        'magicType':{'show':true,'type':['line','bar','stack','tiled']},
+                        'restore':{'show':true},
+                        'saveAsImage':{'show':true}
+                    }
+                },
+                calculable : false,
+                animation:true,
+                animationDuration:600,
+                grid : {
+                    'x':35,
+                    'y':65,
+                    'x2':35,
+                    'y2':75,
+                    borderWidth:0
+                },
+                xAxis : [{
+                    'type':'category',
+                    'axisLabel':{'interval':0,'rotate':-45,'textStyle':{color: 'rgba(255,255,255,0.65)'}},
+                    'axisLine':{show : false,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                    'axisTick':{show : true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                    'splitLine':{show : false},
+                    'data':mydata.xAxis
+                }],
+                yAxis : [
                     {
-                        title : {
-                            'text':'',
-                            x:40,
-                            y:20,
-                            textStyle:{
-                                fontSize: 24, 
-                                fontWeight: 'normal',
-                                color: '#fff'
+                        'type':'value',
+                        'splitLine':{show : false},
+                        'axisTick':{show : true,inside:true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                        'axisLine':{lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                        'axisLabel':{'textStyle':{color: 'rgba(255,255,255,0.65)'}},
+                        'name':'FPY（%）',
+                        'nameTextStyle':{color: '#E2F3F6'}
+                    },
+                    {
+                        'type':'value',
+                        'splitLine':{show : false},
+                        'axisTick':{show : true,inside:true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                        'axisLine':{lineStyle:{color: '#076377', width: 1, type: 'solid'}},
+                        'axisLabel':{'textStyle':{color: 'rgba(255,255,255,0.65)'}},
+                        'name':'OOB（%）',
+                        'nameTextStyle':{color: '#E2F3F6'}
+                    }
+                ],
+                series : [
+                    {
+                        'name':'FPY',
+                        'type':'bar',
+                        'barCategoryGap':'40%',
+                        'data': mydata.series_bar_1.data[0]
+                    }, 
+                    {
+                        'name':'OOB',
+                        'yAxisIndex':1,
+                        'type':'line',
+                        'smooth':true,
+                        'symbol':'none',
+                        'itemStyle': {
+                            'normal': {
+                                lineStyle: { // 系列级个性化折线样式
+                                    width: 4
+                                }
                             }
                         },
-                        tooltip : {'trigger':'axis'},
-                        color:['#B7E1EA','#FFF100','#E2F3F6','rgba(255,255,255,0.3)'],
-                        legend : {
-                            x:'right',
-                            y:120,
-                            padding:25,
-                            itemGap:25,
-                            textStyle:{color: '#B7E1EA',fontSize:14},
-                            'data':mydata.legend
-                        },
-                        toolbox : {
-                            'show':false, 
-                            orient : 'vertical',
-                            x: 'right', 
-                            y: 'center',
-                            'feature':{
-                                'mark':{'show':true},
-                                'dataView':{'show':true,'readOnly':false},
-                                'magicType':{'show':true,'type':['line','bar','stack','tiled']},
-                                'restore':{'show':true},
-                                'saveAsImage':{'show':true}
+                        'data': mydata.series_line_1.data[0]
+                    },
+                    {
+                        'name':'FPY Target',
+                        'type':'line',
+                        'yAxisIndex':0,
+                        'symbol':'none',
+                        'data': []
+                    },
+                    {
+                        'name':'OOB Target',
+                        'type':'line',
+                        'symbol':'none',
+                        'yAxisIndex':1,
+                        'itemStyle': {
+                            'normal': {
+                                lineStyle: { // 系列级个性化折线样式
+                                    type:'dotted'
+                                } 
                             }
                         },
-                        calculable : false,
-                        animation:true,
-                        animationDuration:600,
-                        grid : {
-                            'x':70,
-                            'y':180,
-                            'x2':70,
-                            'y2':130,
-                            borderWidth:0
-                        },
-                        xAxis : [{
-                            'type':'category',
-                            'axisLabel':{'interval':0,'rotate':-45,'textStyle':{color: 'rgba(255,255,255,0.65)'}},
-                            'axisLine':{show : false,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                            'axisTick':{show : true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                            'splitLine':{show : false},
-                            'data':mydata.xAxis
-                        }],
-                        yAxis : [
-                            {
-                                'type':'value',
-                                'splitLine':{show : false},
-                                'axisTick':{show : true,inside:true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                                'axisLine':{lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                                'axisLabel':{'textStyle':{color: 'rgba(255,255,255,0.65)'}},
-                                'name':'FPY（%）',
-                                'nameTextStyle':{color: '#E2F3F6'}
-                            },
-                            {
-                                'type':'value',
-                                'splitLine':{show : false},
-                                'axisTick':{show : true,inside:true,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                                'axisLine':{lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                                'axisLabel':{'textStyle':{color: 'rgba(255,255,255,0.65)'}},
-                                'name':'OOB（%）',
-                                'nameTextStyle':{color: '#E2F3F6'}
-                            }
-                        ],
-                        series : [
-                            {
-                                'name':'FPY',
-                                'type':'bar',
-                                'barCategoryGap':'40%',
-                                'data': mydata.series_bar_1.data[0]
-                            }, 
-                            {
-                                'name':'OOB',
-                                'yAxisIndex':1,
-                                'type':'line',
-                                'smooth':true,
-                                'symbol':'none',
-                                'itemStyle': {
-                                    'normal': {
-                                        lineStyle: { // 系列级个性化折线样式
-                                            width: 4
-                                        }
-                                    }
-                                },
-                                'data': mydata.series_line_1.data[0]
-                            },
-                            {
-                                'name':'FPY Target',
-                                'type':'line',
-                                'yAxisIndex':0,
-                                'symbol':'none',
-                                'data': []
-                            },
-                            {
-                                'name':'OOB Target',
-                                'type':'line',
-                                'symbol':'none',
-                                'yAxisIndex':1,
-                                'itemStyle': {
-                                    'normal': {
-                                        lineStyle: { // 系列级个性化折线样式
-                                            type:'dotted'
-                                        } 
-                                    }
-                                },
-                                'data': []
-                            }
-                        ]
+                        'data': []
                     }
                 ]
-            };
-            for (var i = 1; i < 12; i++) {
-                option.options.push({
-                    series : [
-                        {'data': mydata.series_bar_1.data[i]},
-                        {'data': mydata.series_line_1.data[i]}
-                    ]
-                })
             };
             var target1 = [],
                 target2 = [];
@@ -198,8 +169,8 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                 target1.push(mydata.series_bar_target);
                 target2.push(mydata.series_line_target);
             }
-            option.options[0].series[2].data = target1;
-            option.options[0].series[3].data = target2;  
+            option.series[2].data = target1;
+            option.series[3].data = target2;  
             this.option = option;
             this.loadStatus = true;
             option = null;
@@ -273,7 +244,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         color:['#B7E1EA','#FFF100','#E2F3F6','rgba(255,255,255,0.3)'],
                         legend : {
                             x:'right',
-                            y:120,
+                            y:100,
                             padding:25,
                             itemGap:25,
                             textStyle:{color: '#B7E1EA',fontSize:14},
@@ -297,7 +268,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                         animationDuration:600,
                         grid : {
                             'x':70,
-                            'y':180,
+                            'y':150,
                             'x2':70,
                             'y2':130,
                             borderWidth:0
@@ -422,6 +393,7 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
         };
 
         LvFpyOob.prototype._setOptionLine = function(mydata){
+            var self = this;
             var option = {
                 color:["#fff"],
                 title : {
@@ -430,8 +402,9 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                 },
                 tooltip : {
                     trigger: 'axis',
+                    backgroundColor:'rgba(0,0,0,0)',
                     axisPointer:{
-                        type : 'line',
+                        type : 'none',
                         lineStyle : {
                           color: '#fff',
                           width: 2,
@@ -442,6 +415,18 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                           width: 2,
                           type: 'solid'
                         }
+                    },
+                    showDelay:'160',
+                    position : function(p) {
+                        // 位置回调
+                        
+                    },
+                    formatter:function(params,ticket,callback){
+                        console.log(params);
+                        console.log(self.chart.component.xAxis.getAxis(0).getCoord(params[0][1]));
+                        console.log(self.chart.component.yAxis.getAxis(0).getCoord(params[0][2]));
+                        //$(".map_tips").html(params[5].name+':'+params[5].value);
+                        return '';
                     }
                 },
                 legend: {
@@ -461,10 +446,10 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
                 animation: true,
                 calculable : false,
                 grid : {
-                    'x':70,
-                    'x2':30,
-                    'y':30,
-                    'y2':70,
+                    'x':40,
+                    'x2':15,
+                    'y':15,
+                    'y2':15,
                     borderWidth:0
                 },
                 xAxis : [
@@ -525,4 +510,3 @@ define(['echarts','echarts/chart/line','echarts/chart/bar'],
         return LvFpyOob;
     }
 );
-     

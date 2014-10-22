@@ -1,4 +1,4 @@
-define(['echarts','echarts/chart/gauge','echarts/chart/bar','echarts/chart/line'],
+define(['echarts','echarts/chart/bar','echarts/chart/line'],
     function(ec){
         var lvChart = {
             echarts:ec,
@@ -247,10 +247,10 @@ define(['echarts','echarts/chart/gauge','echarts/chart/bar','echarts/chart/line'
                     data: []
                 },
                 grid: {
-                    y:60,
-                    x:250,
-                    x2:80,
-                    y2: 40,
+                    y:15,
+                    x:125,
+                    x2:25,
+                    y2:25,
                     borderWidth:0
                 },
                 toolbox: {

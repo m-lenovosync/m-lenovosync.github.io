@@ -74,7 +74,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
                             //x: '5%',
                             y: 'center',
                             width: '90%',
-                            height: '80%'
+                            height: '78%'
                         },
                         selectedMode: null,
                         hoverable: false,
@@ -116,15 +116,15 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
                                     geoCoord: [81.18, 16.54],
                                     name: 'india',
                                     value: 'india',
-                                    symbolSize: 40,
-                                    symbol: 'image://../images/india.png'
+                                    symbolSize: 23,
+                                    symbol: 'image://images/india.png'
                                 },
                                 {
                                     geoCoord: [92.18, 16.54],
                                     value: 'southAmerica',
                                     name: 'southAmerica',
-                                    symbolSize: 40,
-                                    symbol: 'image://../images/southAmerica.png'
+                                    symbolSize: 23,
+                                    symbol: 'image://images/southAmerica.png'
                                 }
                             ]
                         }
@@ -141,12 +141,12 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
                             //X: '5%',
                             y: 'center',
                             width: '90%',
-                            height: '80%'
+                            height: '78%'
                         },
                         data: [],
                         markPoint: {
                             symbol: 'circle',
-                            symbolSize: 6,
+                            symbolSize: 4,
                             data: []
                         }
                     }
@@ -264,7 +264,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
             var self = this;
             $.ajax({
                 type: "get",
-                url: "../jsonpcallback/jsonpcallback.js",
+                url: "jsonpcallback/jsonpcallback.js",
                 dataType: "jsonp",
                 jsonpCallback: "mapListData"
             }).done(function (data) {
@@ -286,7 +286,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
             var liTemplate =
                     '<div class="mapDataDetail">' +
                     '   <h2 class="mdh2">' +
-                    '       <span class="mdh2_1">标题:</span>' +
+//                    '       <span class="mdh2_1">标题:</span>' +
                     '       <span class="mdh2_2">标题名</span>' +
                     '   </h2>' +
                     '   <ul class="mdhlist">' +
@@ -301,7 +301,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
             for (var i = 0; i < MapArrylength; i++) {
                 var $kt = $(liTemplate);
                 var $ktlist = $kt.find(".mdhlist");
-                $kt.find(".mdh2_1").html(MapArry[i]['listTitle'] + ":");
+//                $kt.find(".mdh2_1").html(MapArry[i]['listTitle'] + ":");
                 $kt.find(".mdh2_2").html(MapArry[i]['listName']);
                 $kt.attr('data-cname', MapArry[i]['listName']);
                 $ktlist.html("");
@@ -330,6 +330,8 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
                 calculateHeight: true,
                 slidesPerViewFit: true,
                 centeredSlides: true,
+                autoplay: 3000,
+                speed: 300,
                 onSlideClick: function (sw) {
                     page_1_swiper.swipeTo(page_1_swiper.clickedSlideIndex);
                     var $sides = $(page_1_swiper.clickedSlide);

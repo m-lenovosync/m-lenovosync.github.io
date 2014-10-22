@@ -20,12 +20,12 @@
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" data-dom-cache="true" class="bg_color_01 index-page">
+<div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_blue2 index-page">
 	<header class="headerWrap">
 		<h2 class="lenovoTitle">Search</h2>
 		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
@@ -34,10 +34,10 @@
 	<div role="main" class="ui-content noFooter">
 	    <div class="searchTabTag">
 	        <a href="Qstop_Search.html" data-transition="slide" class="tabTag">Q-Stop <i class="tag_down_ico"></i></a>
-	        <a href="FPY_Search.html" data-transition="slide" class="tabTag">FPY/OOB <i class="tag_down_ico"></i></a>
-	        <a href="Audit_Search.html" data-transition="slide" class="tabTag">AUdit <i class="tag_down_ico"></i></a>
+	        <a href="FPY_Search.html" data-transition="slide" class="tabTag cur">FPY/OOB <i class="tag_down_ico"></i></a>
+	        <a href="Audit_Search.html" data-transition="slide" class="tabTag">Audit <i class="tag_down_ico"></i></a>
 	        <a href="FAI_Search.html" data-transition="slide" class="tabTag">FAI <i class="tag_down_ico"></i></a>
-	        <a href="EC_Search.html" data-transition="slide" class="tabTag cur">EC <i class="tag_down_ico"></i></a>
+	        <a href="EC_Search.html" data-transition="slide" class="tabTag">EC <i class="tag_down_ico"></i></a>
 	    </div>
 	    <div class="searchTabCon">
 	        <div class="timeWrap">
@@ -49,24 +49,24 @@
                     <span class="timeTitle">End Time</span>
 	                <input type="date" class="form_date form_txt_style" id="endTime">
                 </div>
-	        </div>
-	        <h2 class="selectConTitle">
-	            Type
-	            <a href="javascript:void(0)" class="selectedSure">OK</a>
+	        </div>			
+			<h2 class="selectConTitle">
+	            Phase
+	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
 	        </h2>
 	        <div class="selectConList selTab-table">
                 <div class="selTab-th">
 					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Type-1" checked /><label for="Type-1" class="form_checkbox">Cut In</label>
+					   <input type="checkbox" id="Phase-1" checked /><label for="Phase-1" class="form_checkbox">Ramp up</label>
 					</span>
 					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Type-2" checked /><label for="Type-2" class="form_checkbox">Run In</label>
+					   <input type="checkbox" id="Phase-2" checked /><label for="Phase-2" class="form_checkbox">Mass  Production</label>
 					</span>
 				</div>
-	        </div>
+	        </div>			
 	        <h2 class="selectConTitle">
 	            Product
-	            <a href="javascript:void(0)" class="selectedSure">OK</a>
+	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
 	        </h2>
 			<div class="ecSubNavlist ecLine">
 				<span class="ecSubTag cur">All</span>
@@ -171,10 +171,10 @@
 					   <input type="checkbox" id="Product-8" checked /><label for="Product-8" class="form_checkbox">H530s</label>
 					</span>
 				</div>
-	        </div>
-	        <h2 class="selectConTitle">
+	        </div>	
+			<h2 class="selectConTitle">
 	            ODM
-	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+	            <a href="javascript:void(0)" class="selectedSure">OK</a>
 	        </h2>
 	        <div class="selectConList selTab-table">
                 <div class="selTab-th">
@@ -228,7 +228,7 @@
 	        </div>
 	    </div>
 	    <div class="seachBtnWrap">
-	        <a href="EC_SearchResult.html" data-transition="slide" class="form_btn form_btn_blue">Search</a>
+	        <a href="FPY_OOBSearchResult-1.html" data-transition="slide" class="form_btn form_btn_blue">Search</a>
 	    </div>
 	</div>
 
@@ -236,6 +236,6 @@
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>
+<script src="js/require.js" data-main="js/main" ></script>
 </body>
 </html>

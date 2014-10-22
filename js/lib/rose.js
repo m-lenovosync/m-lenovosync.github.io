@@ -2,15 +2,15 @@
 
 //HOME_AUDIT
 function home_aduit(target) {
-	console.log(123)
-	var jsonpURL = "../jsonpcallback/jsonpcallback_audit.js";
+	//console.log(123)
+	var jsonpURL = "jsonpcallback/jsonpcallback_audit.js";
 	var jsonpCallback = "homeaudit";
 	var jsonpCache;
 	var renderLayoutCache;
 	var $targey = $(target);	
 
 	function getJsonp(jsonpURL) {
-		console.log(jsonpURL)
+		//console.log(jsonpURL)
 		$.ajax({
 			type: "get",
 			url: jsonpURL,
@@ -53,9 +53,15 @@ function home_aduit(target) {
 			'</div>';
 		function render(k,d,c) {
 			for (var i = 0; i< k; i ++) {
+                if(d[i]["logoURL"].indexOf("webapp")){
+                    var web = "webapp/";
+                }else{
+                    var web = "";
+                }
+//                console.log(d[i]["logoURL"].indexOf("webapp"))
 				var $tp = $(template);
 				$tp.addClass(c+"_"+i);
-				$tp.find(".eai_logo").css("background-image","url('"+ d[i]["logoURL"]  +"')");
+				$tp.find(".eai_logo").css("background-image","url('"+ web + d[i]["logoURL"]  +"')");
 				$tp.find(".eai_score").html(d[i]["score"]);
 				$tp.find(".eai_comname").html(d[i]["name"]);
 				$tp.find(".eai_state").addClass(d[i]["state"]);
@@ -76,7 +82,6 @@ function home_aduit(target) {
 	getJsonp(jsonpURL);
 	$targey.html("");	
 }
-
 
 //function setchart_bar_auditodm(){	 
 //        require(["chart_audit"],function(LvAudit){ //AUDIT

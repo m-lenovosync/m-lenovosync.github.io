@@ -20,9 +20,9 @@
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .ui_fai_pie,
         .ui_fai_bar{
@@ -36,10 +36,10 @@
     </style>
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" class="bg_org js-chart chart_fai_odm"   data-page-name="fai_odm">
+<div data-role="page" data-quicklinks="true" class="bg_org js-chart chart_fai_odm"  data-page-name="fai_odm">
     <header class="headerWrap">
 		<h2 class="lenovoTitle">FAI Search Result</h2>
-		<a href="javascript:void(0)" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
+		<a href="../index.html" data-rel="back" class="perLink ui-btn-left myico-arrowL"></a>
 	</header>
 	<!-- /header -->
     <div role="main" class="ui-content noFooter">
@@ -53,11 +53,11 @@
 				<div class="dateCell-td">2014-10-14</div>
 			</div>
 			<div class="dateRow">
-				<div class="dateCell-th">ODM</div>
-				<div class="dateCell-td">All</div>
+				<div class="dateCell-th">GEO</div>
+				<div class="dateCell-td">EMEA AG PRC EAP MAP</div>
 			</div>		
 		</div>
-		<div class="searchText"><i class="searR myico-arrowT1"></i></div>
+		<div class="searchText"><i class="searR myico-arrow02"></i></div>
 		<div class="Fai_idmCon">
         	<h3 class="Fai_idmTitle">FAI Breakdown</h3>
             <div id="ui_faiodm_pie" class="ui_fai_pie fai_search"></div>           
@@ -71,6 +71,6 @@
 
 <!-- Javascript with AMD 
 ================================================== -->
-<script src="../js/require.js" data-main="../js/main" ></script>
+<script src="js/require.js" data-main="js/main" ></script>
 </body>
 </html>

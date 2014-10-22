@@ -3,13 +3,13 @@ define(function(){
 		chartArr:[]
 	};
 	LvPage.init = function(pageName,params){
-		console.log('initchart');
+		//console.log('initchart');
 		LvPage.disposeChart();
 		switch(pageName){
             case "fpy_ood_odm_result":
-				require(["chart_fpyoob"],function(LvAudit){ //AUDIT
-                   var timeLine_2 = new LvAudit('fpy_ood_line01','line');
-                   var timeLine_3 = new LvAudit('fpy_ood_line02','line');
+				require(["chart_fpyoob"],function(LvFpyOob){ //AUDIT
+            var timeLine_2 = new LvFpyOob('fpy_ood_line01','line');
+            var timeLine_3 = new LvFpyOob('fpy_ood_line02','timeLine');
 					LvPage.chartArr.push(timeLine_2,timeLine_3);
 					LvPage.resetOptionChart();
 				});
@@ -53,7 +53,7 @@ define(function(){
 				break;
 			case "fai_result":
 				require(["chart_fai"],function(LvFai){ //FAI
-					console.log(page_modules.params);
+					//console.log(page_modules.params);
 					if(page_modules.params.type == 1){
 						$("#chart_fai_result_bar").parent().show();
 						var pie = new LvFai('chart_fai_result_pie','pie'),

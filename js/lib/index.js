@@ -7,6 +7,7 @@ function allFun() {
     if(uiContent.hasClass('noFooter')){
         $('.ui-content').height(winHeight - 50);
     } else {
+//        alert(123)
         $('.ui-content').height(winHeight - 105);
     }
     //添加横屏时遮罩层
@@ -22,8 +23,6 @@ function allFun() {
     $('.chartsTab span').plusTab({ opt_2: '.chartsBox' });
     $('.LenovoIconTab li').plusTab({ opt_2: '.LenovoIconBox' });
     $('.ThinkTab li').plusTab({ opt_2: '.ThinkBox' });
-    //swiper.js插件
-    
 }
 //控制tab切换插件js
 (function ($) {
@@ -68,10 +67,59 @@ function allFun() {
     };
 })(jQuery);
 
+//TO:SWITCH
+//function eachblock_Switcher(obj,options) {
+//	var opts = $.extend({
+//		switchClass:["switch_1","switch_2"],
+//		switchWrapper:".page_swicher_wrap",
+//		switchBtn:".mapswipebtn",
+//		switchBtnCurMark:"cur"
+//	},options);
+//	var $objs = $(obj);
+//	if ($objs.length) {
+//		$objs.each(function(i,el) {
+//			var $el          = $(el);
+//			var $switchBtn   = $el.find(opts.switchBtn);
+//			var $switchWrap  = $el.find(opts.switchWrapper);
+//			var cacheIndex   = "";
+//			$el.on("tap", opts.switchBtn, function() {
+//				var $this = $(this);
+//				cacheIndex = $this.index();
+//				//console.log(cacheIndex)
+//				$this.addClass("cur").siblings().removeClass("cur");
+//				$el.trigger("Switch_" + cacheIndex );
+//			}).on({
+//				'Switch_0':function() {
+//					var class_1 = opts.switchClass[cacheIndex];
+//					var class_2 = opts.switchClass[(cacheIndex+1)];
+//					$el.addClass(class_1).removeClass(class_2);
+//					$switchWrap.one(transEnd("switch"), function(e) {
+//						e.stopPropagation();
+//						$el.trigger("Switch_"+cacheIndex+"_ani_end");
+//						$switchWrap.off(".switch");
+//					});
+//				},
+//				'Switch_1':function() {
+//					var class_1 = opts.switchClass[cacheIndex];
+//					var class_2 = opts.switchClass[(cacheIndex-1)];
+//					$el.addClass(class_1).removeClass(class_2);
+//					$switchWrap.one(transEnd("switch"), function(e) {
+//						e.stopPropagation();
+//						$el.trigger("Switch_"+cacheIndex+"_ani_end");
+//						$switchWrap.off(".switch");
+//					});
+//				}
+//			});
+//		});	
+//	}
+//}
+
+
 allFun();
 ChartBind();
 
 require(["jquery", "jqueryMobile"], function($) {
+    rosefunction();
     //所有页面加载执行方法
     $(document).on("pageshow", ".ui-page", function(event) {
         allFun();
@@ -112,7 +160,7 @@ function ChartBind() {
         });
     }
 
-    //Qstop_Charts.html
+    //index.html
     if ($('.chart_qstop_home').attr('data-page-name') == 'qstop_home') {
          require(['page_chart_control'], function (LvPage) {
              LvPage.init('qstop_home');
