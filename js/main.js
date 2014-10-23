@@ -34,4 +34,8 @@ require.config({
         'index'					: {deps: ['jquery', 'echartsConfig'] }
 	}
 });
-require(["index","rose"]);
+require(["jquery", "jqueryMobile","index"], function($) {
+		$(function() {
+			appInit();
+		});
+});

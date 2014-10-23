@@ -459,6 +459,13 @@ input{
     background: url(../images/svg/logo.svg) no-repeat center center;
     background-size: 100% 36px;
 }
+.selectTitle{
+    width: 50%;
+    margin-top: 10px;
+}
+.selectTitle .form_select{
+    border-radius: 20px;
+}
 
 a.myico-user,a.myico-user:hover,a.myico-user:active,a.myico-user:visited,
 a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited{
@@ -961,7 +968,12 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 }
 /* personal center */
 .userinfo_1, .userinfo_2{
+    width: 100%;
 	padding:12px 20px 0;
+    -moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
 }
 .infoList{
 	width:100%;
@@ -1730,7 +1742,13 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 	height:30%;
 	min-height:150px;
 }
-.ui_fai_pie{border:1px solid rgba(237,222,207,0.2);}
+.ui_fai_pie{
+    border:1px solid rgba(237,222,207,0.2);
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+}
 .ui_fai_map{	
 	margin-bottom:2.5%;
 }
@@ -1993,4 +2011,120 @@ only screen and (min-device-pixel-ratio: 2) {
 	width: 20px;
 	height: 20px;
 	background:rgba(255,255,255,0.75);
+}
+
+.logWrap{
+    width: 100%;
+    height: 100%;
+    background: url(../images/logBg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.loadingCon{
+    width: 100%;
+    height: 100%;
+    background: url(../images/logBg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.loadingCon.hide{
+    display: none;
+}
+.appLogo{
+    z-index: 10;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    margin-top: -120px;
+    background: url("../images/svg/logo.svg") center center no-repeat;
+    opacity: 0.6;
+}
+.copyRight{
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.2;
+}
+/*============================slide checkbox style==========================*/
+.slideCheckbox {
+    display: inline-block;
+    width: 65px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    position: relative;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    vertical-align: middle;
+    font-size: 12px;
+/*    font-weight: bold;*/
+    cursor: pointer;
+}
+.slideCheckbox:after {
+    content: 'No';
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+    
+}
+.slideCheckbox:before {
+    content: 'Yes';
+    position: absolute;
+    left: 10px;
+    z-index: 2;
+}
+.slideCheckbox .slideBg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    background-color: #000;
+    -webkit-transition: all 0.2s ease 0.3s;
+}
+.slideCheckbox label{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 5px;
+    top: 3px;
+    background-color: #fff;
+    border-radius: 13px;
+    z-index: 3;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+.slideCheckbox  input[type=checkbox] {
+    visibility: hidden;
+}
+.slideCheckbox input:checked + .slideBg {
+    background-color: #00b6c1;
+}
+.slideCheckbox input:checked + .slideBg + label {
+    left: 34px;
+}
+/*============================end slide checkbox style==========================*/
+.overAllWrap{
+    width: 100%;
+    background: url(../images/diaBg.jpg) no-repeat;
+}
+/* HiDPI support */
+/* 视网膜显示屏CSS */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 2) {
+    .logWrap,.loadingCon{ background-image: url(../images/logBg@2x.jpg);}
 }

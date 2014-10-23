@@ -8,7 +8,6 @@ function home_aduit(target) {
 	var jsonpCache;
 	var renderLayoutCache;
 	var $targey = $(target);	
-
 	function getJsonp(jsonpURL) {
 		//console.log(jsonpURL)
 		$.ajax({
@@ -22,7 +21,6 @@ function home_aduit(target) {
 			splitjson();
 		});
 	}
-
 
 	function splitjson() {
 		var json_blue = new Array(),
@@ -42,7 +40,7 @@ function home_aduit(target) {
 		renderLayoutCache = $("<div>");
 		var template = 
 			'<div class="eb_audit_items">'+
-			'<a href="Audit_ODM.html" data-transition="slide">'+
+			'<a href="Audit_ODM.html" data-transition="none">'+
 			'	<div class="vam clearfix">'+
 			'		<div class="eai_logo" style="background-image: url()"></div>'+
 			'		<div class="eai_score">99</div>'+
@@ -80,59 +78,4 @@ function home_aduit(target) {
 		renderLayoutCache = null;
 	}
 	getJsonp(jsonpURL);
-	$targey.html("");	
-}
-
-//function setchart_bar_auditodm(){	 
-//        require(["chart_audit"],function(LvAudit){ //AUDIT
-//			var gauge = new LvAudit('chart_auditOdm_bar','bar2');
-//			gauge.resetOption();			
-//		});
-//}
-
-//function setchart_faiodm(){	
-//	var LvPage = {
-//		chartArr:[]
-//	};
-//	require(["chart_fai"],function(LvFai){ //AUDIT
-//					var pie = new LvFai('ui_faiodm_pie','pie'),
-//						bar = new LvFai('ui_faiodm_bar','bar_2');
-//					LvPage.chartArr.push(pie, bar);
-//					LvPage.resetOptionChart();
-//				});
-	
-//	LvPage.resizeChart = function(){//resize图表
-//		$(window).off(".page");
-//		$(window).on('resize.page',function() {
-//			$.each(LvPage.chartArr,function(k,v){
-//				v.chart.resize();
-//				v.bindEvents();
-//			});
-//		});
-//	};
-//	LvPage.resetOptionChart = function(){//绘制chart
-//		console.log(1)
-//		$.each(LvPage.chartArr,function(k,v){
-//			v.resetOption();
-//		});
-//		LvPage.resizeChart();
-//	};
-//	return LvPage;
-//}
-
-function rosefunction(){
-
-	$win =$(window);
-	$doc =$(document);
-	$body=$("body");
-	$html=$("html");
-
-	home_aduit(".eb_audit_inner");
-	//if($("#chart_auditOdm_bar").length>0){
-	//	setchart_bar_auditodm();
-	//}
-	//if($("#ui_faiodm_pie").length>0){
-	//	setchart_faiodm();
-	//}
-	
 }

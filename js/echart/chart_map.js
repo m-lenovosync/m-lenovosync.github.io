@@ -270,7 +270,6 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
             }).done(function (data) {
                 self._setOption(data.mapListData);
                 drawFlag && self.resetOption();
-
                 self._setRightList(data.mapListData);
             });
         };

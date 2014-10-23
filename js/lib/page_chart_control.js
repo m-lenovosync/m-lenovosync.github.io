@@ -3,15 +3,24 @@ define(function(){
 		chartArr:[]
 	};
 	LvPage.init = function(pageName,params){
-		//console.log('initchart');
-		LvPage.disposeChart();
 		switch(pageName){
-            case "fpy_ood_odm_result":
+            case "fpy_oob":
 				require(["chart_fpyoob"],function(LvFpyOob){ //AUDIT
-            var timeLine_2 = new LvFpyOob('fpy_ood_line01','line');
-            var timeLine_3 = new LvFpyOob('fpy_ood_line02','timeLine');
-					LvPage.chartArr.push(timeLine_2,timeLine_3);
+          var timeLine_2 = new LvFpyOob('fpy_ood_line01','line');
+					LvPage.chartArr.push(timeLine_2);
 					LvPage.resetOptionChart();
+				});
+				break;
+			case "fpy_oob_mp":
+				require(["chart_fpyoob"],function(LvFpyOob){ //AUDIT
+          var timeLine_3 = new LvFpyOob('fpy_ood_line02','timeLine');
+					LvPage.chartArr.push(timeLine_3);
+					LvPage.resetOptionChart();
+				});
+				break;
+			case "audit_home":
+				require(["rose"],function(){ //AUDIT
+				  home_aduit(".eb_audit_inner");
 				});
 				break;
 			case "audit_odm":
@@ -30,11 +39,12 @@ define(function(){
 				});
 				break;
 			case "fai_home":
-				require(["chart_fai"],function(LvFai){ //AUDIT
+				require(["chart_fai","fai_home"],function(LvFai,FaiPage){ //AUDIT
 					var pie = new LvFai('ui_fai_pie','pie'),
 						bar = new LvFai('ui_fai_bar','bar');
 					LvPage.chartArr.push(pie, bar);
 					LvPage.resetOptionChart();
+					FaiPage.initworldmap('#ui_fai_map');
 				});
 				break;
 			case "fpyoob_in":
@@ -95,19 +105,19 @@ define(function(){
 				    }
 				});
 				break;
-		    case "qstop_home":
-		        
-		        require(["chart_map"], function (LvMap) {
-		            var map = new LvMap('mapWrap');
-		            LvPage.chartArr.push(map);
-		            //LvPage.resetOptionChart();
-		        });
-		        require(["chart_qstop"], function (lvqstop) {
-		            var bar = new lvqstop('chart_home_bar');
-		            LvPage.chartArr.push(bar);
-		            LvPage.resetOptionChart();
-		        });
-		        break;
+	    case "qstop_home":
+	        require(["chart_map"], function (LvMap) {
+	            var map = new LvMap('mapWrap');
+	            LvPage.chartArr.push(map);
+	            //LvPage.resetOptionChart();
+	        });
+	    case "qstop_chart":
+	        require(["chart_qstop"], function (lvqstop) {
+	            var bar = new lvqstop('chart_home_bar');
+	            LvPage.chartArr.push(bar);
+	            LvPage.resetOptionChart();
+	        });
+	        break;
 			case "qstop_result":
 			    require(["chart_qstop"], function (LvQStop) {
 			        var bar = new LvQStop('chart_qstop_bar');

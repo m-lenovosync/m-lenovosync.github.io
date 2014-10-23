@@ -27,6 +27,7 @@ MyChart.prototype.resetOption = function () {
         //this.getChartData(1);
     }
     this.chart = this.myEcharts.init(document.getElementById(this.dom_id));
+    this.option.animation = false;
     this.chart.setOption(this.option);
     this.bindEvents();
 }

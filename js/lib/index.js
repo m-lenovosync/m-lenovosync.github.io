@@ -1,5 +1,11 @@
+//日期控件默认js
+Date.prototype.toDateInputValue = (function () {
+    var local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+});
 //整体框架控制模块
-function allFun() {
+function allFun(LvPage) {
     //主体内容高度设置
     var winHeight = $(window).height();
     var uiContent = $('.ui-page-active').find('.ui-content');
@@ -12,15 +18,33 @@ function allFun() {
     }
     //添加横屏时遮罩层
     //	$("body").append('<div class="trasfrm ds768"><div class="padArow"></div><div class="iconPad_1"><div class="iconpad_2"></div></div><div class="iconPad_1 trmoct"><div class="iconpad_2"></div></div><p class="trapf"><strong></strong> 请 <strong>切换到竖屏</strong> 以达到最佳浏览效果</p></div>');
-    //日期控件默认js
-    Date.prototype.toDateInputValue = (function () {
-        var local = new Date(this);
-        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-        return local.toJSON().slice(0, 10);
-    });
+    
     $('#startTime,#endTime').val(new Date().toDateInputValue());
     //控制tab切换
-    $('.chartsTab span').plusTab({ opt_2: '.chartsBox' });
+    $('.chartsTab.qstop span').plusTab({ 
+        opt_2: '.chartsBox',
+        callback:function(obj){
+            if(obj.html() == "CHARTS"){
+                LvPage.disposeChart();
+                LvPage.init("qstop_chart");
+            }else{
+                LvPage.disposeChart();
+                LvPage.init("qstop_home");
+            }
+        }
+    });
+    $('.chartsTab.fpyoob span').plusTab({ 
+        opt_2: '.chartsBox',
+        callback:function(obj){
+            if(obj.html() == "MP"){
+                LvPage.disposeChart();
+                LvPage.init("fpy_oob_mp");
+            }else{
+                LvPage.disposeChart();
+                LvPage.init("fpy_oob");
+            }
+        }
+    });
     $('.LenovoIconTab li').plusTab({ opt_2: '.LenovoIconBox' });
     $('.ThinkTab li').plusTab({ opt_2: '.ThinkBox' });
 }
@@ -31,119 +55,70 @@ function allFun() {
         var opts = {
             opt_1: 'cur',
             opt_2: '.tabBox',
-            opt_3: 'chartHide'
+            opt_3: 'chartHide',
+            callback:function(obj){}
         };
         var opt = $.extend(opts, options);
         return this.each(function () {
             var _obj = $(this);
             _obj.click(function (e) {
-              
                 e.stopPropagation();
+                if(_obj.hasClass(opt.opt_1)){
+                    return false;
+                }
                 _obj.addClass(opt.opt_1).siblings().removeClass(opt.opt_1);
                 var i = _obj.index();
-                $(opt.opt_2 + '> div').eq(i).removeClass(opt.opt_3).siblings().addClass(opt.opt_3);
-//                console.log($(this).html());
-                $(document).trigger("changeChart");
-//                switch($(this).html()){
-//                    case 'MPA':
-//                        $(document).trigger("changeChart", ["map"]);
-//                        break;
-//                    case 'CHARTS':
-//                        $(document).trigger("changeChart", ["charts"]);
-//                        break;
-//                     case 'LENOVO':
-//                        $(document).trigger("changeChart", ["lenovo"]);
-//                        break;
-//                    case 'THINK':
-//                        $(document).trigger("changeChart", ["think"]);
-//                        break;                   
-//                    default:break;
-//                        
-//                }
-
+                _obj.closest('.ui-page').find(opt.opt_2).children().eq(i).removeClass(opt.opt_3).siblings().addClass(opt.opt_3);
+                opts.callback(_obj);
+                //$(document).trigger("changeChart");
             });
         });
         return this;
     };
 })(jQuery);
 
-//TO:SWITCH
-//function eachblock_Switcher(obj,options) {
-//	var opts = $.extend({
-//		switchClass:["switch_1","switch_2"],
-//		switchWrapper:".page_swicher_wrap",
-//		switchBtn:".mapswipebtn",
-//		switchBtnCurMark:"cur"
-//	},options);
-//	var $objs = $(obj);
-//	if ($objs.length) {
-//		$objs.each(function(i,el) {
-//			var $el          = $(el);
-//			var $switchBtn   = $el.find(opts.switchBtn);
-//			var $switchWrap  = $el.find(opts.switchWrapper);
-//			var cacheIndex   = "";
-//			$el.on("tap", opts.switchBtn, function() {
-//				var $this = $(this);
-//				cacheIndex = $this.index();
-//				//console.log(cacheIndex)
-//				$this.addClass("cur").siblings().removeClass("cur");
-//				$el.trigger("Switch_" + cacheIndex );
-//			}).on({
-//				'Switch_0':function() {
-//					var class_1 = opts.switchClass[cacheIndex];
-//					var class_2 = opts.switchClass[(cacheIndex+1)];
-//					$el.addClass(class_1).removeClass(class_2);
-//					$switchWrap.one(transEnd("switch"), function(e) {
-//						e.stopPropagation();
-//						$el.trigger("Switch_"+cacheIndex+"_ani_end");
-//						$switchWrap.off(".switch");
-//					});
-//				},
-//				'Switch_1':function() {
-//					var class_1 = opts.switchClass[cacheIndex];
-//					var class_2 = opts.switchClass[(cacheIndex-1)];
-//					$el.addClass(class_1).removeClass(class_2);
-//					$switchWrap.one(transEnd("switch"), function(e) {
-//						e.stopPropagation();
-//						$el.trigger("Switch_"+cacheIndex+"_ani_end");
-//						$switchWrap.off(".switch");
-//					});
-//				}
-//			});
-//		});	
-//	}
-//}
+function appInit(){
+    require(['page_chart_control'], function(LvPage) {
+        allFun(LvPage);
+        LvPage.init('qstop_home');
+        //rosefunction();
+        $(document).on("pageshow", ".ui-page", function(event) {
+            allFun(LvPage);
+            var pageName = $(this).attr('data-page-name');
+            LvPage.init(pageName);
+        }).on("pagebeforeshow", ".ui-page", function(event) {
+            LvPage.disposeChart();
+        });
 
-
-allFun();
-ChartBind();
-
-require(["jquery", "jqueryMobile"], function($) {
-    rosefunction();
-    //所有页面加载执行方法
-    $(document).on("pageshow", ".ui-page", function(event) {
-        allFun();
-       
+        // $(window).hashchange(function () {
+        //     ChartBind();
+        //     allFun();
+        // });
+        
+        // $(document).bind("changeChart", function (event, msg1) {
+        //     ChartBind();
+        // });
     });
-    //图表加载执行方法
-    $(document).on("pagecreate", ".aduit-chart", function (event) {
-        //            //ROSE module
-        //            if ($('.aduit-chart').attr('data-page-name') == 'aduit') {
-        //                require(['rose'], function() {
-        //                    rosefunction();
-        //                });
-        //            }
-    });
+}
+// require(["jquery", "jqueryMobile",'page_chart_control'], function($,$,LvPage) {
+//     allFun();
+//     LvPage.init('qstop_home');
+//     rosefunction();
+//     $(document).on("pageshow", ".ui-page", function(event) {
+//         allFun();
+//         var pageName = $(this).attr('data-page-name');
+//         LvPage.init(pageName);
+//     });
 
-    $(window).hashchange(function () {
-        ChartBind();
-        allFun();
-    });
+//     $(window).hashchange(function () {
+//         ChartBind();
+//         allFun();
+//     });
     
-    $(document).bind("changeChart", function (event, msg1) {
-        ChartBind();
-    });
-});
+//     $(document).bind("changeChart", function (event, msg1) {
+//         ChartBind();
+//     });
+// });
 function ChartBind() {
     //FAI.html
     if ($('.fai-chart').attr('data-page-name') == 'fai_home') {
@@ -162,7 +137,7 @@ function ChartBind() {
 
     //index.html
     if ($('.chart_qstop_home').attr('data-page-name') == 'qstop_home') {
-         require(['page_chart_control'], function (LvPage) {
+        require(['page_chart_control'], function (LvPage) {
              LvPage.init('qstop_home');
         });
     }
