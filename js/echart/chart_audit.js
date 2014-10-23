@@ -465,7 +465,7 @@ define(['echarts','echarts/chart/bar','echarts/chart/line'],
                     }
                 },
                 tooltip : {'trigger':'axis'},
-                color:["#FFF"],
+                color:["rgba(255,255,255,0.7)"],
                 legend : {
                     x:'right',
                     y:-300,
@@ -491,27 +491,27 @@ define(['echarts','echarts/chart/bar','echarts/chart/line'],
                 animation:true,
                 animationDuration:600,
                 grid : {
-                    'x':70,
+                    'x':0,
                     'y':10,
-                    'x2':50,
-                    'y2':70,
+                    'x2':0,
+                    'y2':10,
                     borderWidth:0
                 },
                 xAxis : [{
                     'type':'category',
-                    'axisLabel':{'interval':0,'rotate':-45,'textStyle':{color: 'rgba(255,255,255,0.65)'}},
-                    'axisLine':{lineStyle:{color: 'rgba(255,255,255,0.1)', width: 1, type: 'solid'}},
-                    'axisTick':{show : true,lineStyle:{color: 'rgba(255,255,255,0.5)', width: 1.5, type: 'solid'}},
+                    'axisLabel':{show : false,'interval':0,'rotate':-45,'textStyle':{color: 'rgba(255,255,255,0.65)'}},
+                    'axisLine':{show : false,lineStyle:{color: 'rgba(255,255,255,0.1)', width: 1, type: 'solid'}},
+                    'axisTick':{show : false,lineStyle:{color: 'rgba(255,255,255,0.5)', width: 1.5, type: 'solid'}},
                     'splitLine':{show : false},
                     'data':mydata.series_line_1.data[0].xAxis
                 }],
                 yAxis : [
                     {
                         'type':'value',
-                        'splitLine':{show : true,lineStyle:{color: 'rgba(255,255,255,0.15)', width: 1, type: 'solid'}},
+                        'splitLine':{show : false,lineStyle:{color: 'rgba(255,255,255,0.15)', width: 1, type: 'solid'}},
                         'axisTick':{show : false,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
                         'axisLine':{show : false,lineStyle:{color: '#076377', width: 1, type: 'solid'}},
-                        'axisLabel':{'textStyle':{color: '#E2F3F6'}},
+                        'axisLabel':{show : false,'textStyle':{color: '#E2F3F6'}},
                         'nameTextStyle':{color: '#E2F3F6'}
                     }
                 ],
@@ -523,8 +523,10 @@ define(['echarts','echarts/chart/bar','echarts/chart/line'],
                         'type':'line',
                         'itemStyle': {
                             'normal': {
+                                color: 'rgba(255,255,255,0.2)',
                                 lineStyle: { // 系列级个性化折线样式
-                                    width: 4
+                                    width: 2,
+                                    color: 'rgba(255,255,255,0.1)'
                                 }
                             }
                         },
@@ -568,14 +570,14 @@ define(['echarts','echarts/chart/bar','echarts/chart/line'],
             var newLineArr = [],
                 monthArr = [],
                 len = new Date(2014,10,0).getDate();//获取某年某月的天数
-            for (var j = 1; j <= len; j++) {
+            for (var j = 1; j <= 10; j++) {
                 monthArr.push(10+'.'+j);
                 newLineArr.push(Math.floor(Math.random()*100));
             };
-            for (var k = len; k <= 30; k++) {//如果当月天数小于31天，需要补全
-                monthArr.push('-.-');
-                newLineArr.push('-');
-            };
+            // for (var k = len; k <= 30; k++) {//如果当月天数小于31天，需要补全
+            //     monthArr.push('-.-');
+            //     newLineArr.push('-');
+            // };
             mydata.series_line_1.data.push({'data':newLineArr,'xAxis':monthArr});
             self._setOptionLine(mydata);
             drawFlag&&self.resetOption();

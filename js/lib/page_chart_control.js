@@ -18,6 +18,13 @@ define(function(){
 					LvPage.resetOptionChart();
 				});
 				break;
+			case "fpy_oob_mp_odm":
+				require(["chart_fpyoob"],function(LvFpyOob){ //AUDIT
+          var timeLine_3 = new LvFpyOob('fpy_ood_mp_line','timeLine_2');
+					LvPage.chartArr.push(timeLine_3);
+					LvPage.resetOptionChart();
+				});
+				break;
 			case "audit_home":
 				require(["rose"],function(){ //AUDIT
 				  home_aduit(".eb_audit_inner");
@@ -25,8 +32,9 @@ define(function(){
 				break;
 			case "audit_odm":
 				require(["chart_audit"],function(LvAudit){ //AUDIT
-				    var gauge = new LvAudit('chart_auditOdm_bar', 'bar2');
-				    LvPage.chartArr.push(gauge);
+						var line = new LvAudit('chart_auditOdm_line', 'line');
+				    var bar = new LvAudit('chart_auditOdm_bar', 'bar2');
+				    LvPage.chartArr.push(line,bar);
 					LvPage.resetOptionChart();
 				});
 				break;
@@ -113,7 +121,14 @@ define(function(){
 	        });
 	    case "qstop_chart":
 	        require(["chart_qstop"], function (lvqstop) {
-	            var bar = new lvqstop('chart_home_bar');
+	            var bar = new lvqstop('chart_home_bar','dataZoom');
+	            LvPage.chartArr.push(bar);
+	            LvPage.resetOptionChart();
+	        });
+	        break;
+	    case "qstop_odm":
+	        require(["chart_qstop"], function (lvqstop) {
+	            var bar = new lvqstop('chart_qstop_odm','dataZoom_2');
 	            LvPage.chartArr.push(bar);
 	            LvPage.resetOptionChart();
 	        });

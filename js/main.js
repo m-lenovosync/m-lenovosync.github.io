@@ -19,7 +19,10 @@ require.config({
 		"rose"					:"lib/rose",
 		'fai_home'				:'echart/fai_home',
 		'chart_qstop'			:'echart/chart_qstop',
-		'page_chart_control'	:'lib/page_chart_control'
+		'page_chart_control'	:'lib/page_chart_control',
+		'createjs'				:'jquery/easeljs.min',
+		'chartline'				:'lib/chart_line'
+
 	},
 	waitSeconds:30,
 	shim: {//模块依赖关系
@@ -31,11 +34,12 @@ require.config({
 		'chart_audit'			: {deps: ['echartsConfig']},
 		'chart_fai'				: {deps: ['echartsConfig']},
         'jqueryMobile'			: {deps: ['jquery']},
-        'index'					: {deps: ['jquery', 'echartsConfig'] }
+        'index'					: {deps: ['jquery', 'echartsConfig'] },
+        'chartline'				: {deps: ['createjs']}
 	}
 });
 require(["jquery", "jqueryMobile","index"], function($) {
 		$(function() {
-			appInit();
+			appInit();		
 		});
 });

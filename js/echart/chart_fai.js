@@ -41,7 +41,7 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                     itemStyle: {
                         normal: {
                             label: {
-                                textStyle:{color:"#E2F3F6",fontSize:16},
+                                textStyle:{color:"#E2F3F6",fontSize:12},
                                 //position : 'inner'
                                 formatter : function(a,b,c,d) {return (d - 0).toFixed(0) + '%'+"\n"+b }
                                 //formatter: "{b}\n{c}"
@@ -252,6 +252,21 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
             this.loadStatus = true;
             return option;
         };
+        LvFai.prototype.bindEvents = function () {//绑定相关事件
+            var self = this;
+            switch(this.chartType){
+                case "bar":
+                    this.chart.on(lvChart.ecConfig.EVENT.CLICK, function(param){
+                        $.mobile.changePage( "FAI_Odm.html", {
+                          transition: "none",
+                          reverse: false,
+                          changeHash: true
+                        });
+                    }); 
+                    break;
+                default:break;
+            }
+        };
         LvFai.prototype.getChartData = function(drawFlag){
             switch(this.chartType){
                 case "pie":
@@ -313,6 +328,19 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                         color: '#5d5d5d'
                     }
                 },
+                dataZoom: {
+                    show: true,
+                    realtime: false,
+                    height:17,
+                    //y:290,
+                    backgroundColor:'rgba(111, 86, 62,0.5)',
+                    dataBackgroundColor: 'rgba(255, 174, 95,0.4)',            
+                    fillerColor: 'rgba(255, 126, 0,0.3)',
+                    handleColor: 'rgba(255, 174, 95, 0.7)',
+                    start: 5,
+                    end: 20,
+                    zoomLock:true//数据缩放锁，默认为false，当设置为true时选择区域不能伸缩，即(end - start)值保持不变
+                },
                 tooltip: {
                     trigger: 'axis',
                     //{Function}，传递参数列表如下：
@@ -334,12 +362,12 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                     y: -300,
                     data: ['Approved', 'Failed', 'Name']
                 },
-                grid: {
-                    x: 60,
-                    y: 20,
-                    x2: 60,
-                    y2: 40,
-                    borderWidth: 0
+                grid:{
+                    x:35,
+                    y:20,
+                    x2:20,
+                    y2:70,
+                    borderWidth:0
                     //backgroundColor:'rgba(200,200,200,0.2)'
                 },
                 toolbox: {
@@ -367,7 +395,7 @@ define(['echarts','echarts/chart/pie','echarts/chart/bar'],
                 xAxis: [{
                     type: 'category',
                     data: [],
-                    'axisLabel': { 'rotate': -45, 'textStyle': { color: 'rgba(255,255,255,0.6)' }, 'interval': 2 },
+                    'axisLabel': { 'rotate': -45, 'textStyle': { color: 'rgba(255,255,255,0.6)' }, 'interval': 0 },
                     'axisLine': { lineStyle: { color: '#503E2C', width: 1, type: 'solid' } },
                     'axisTick': { show: false, lineStyle: { color: '#076377', width: 1, type: 'solid' } },
                     'splitLine': { show: false }

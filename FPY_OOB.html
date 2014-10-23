@@ -32,6 +32,7 @@
     
 </head>
 <body>
+
 <div data-role="page" data-quicklinks="true" class="bg_blue2 index-page" data-page-name="fpy_oob">
     <header class="headerWrap">
         <h2 class="lenovoTitle fpyoob chartsTab"><span class="chartsTab_l cur">RAMP UP</span><span class="chartsTab_r">MP</span></h2>
@@ -59,14 +60,14 @@
                         <div class="row">
                             <div class="cell-th">Mfg</div>
                             <div class="cell-td">Compal Brazil</div>
+                            <div class="cell-th">Phase</div>
+                            <div class="cell-td">2014-09-16</div>
                         </div>
                         <div class="row">
                             <div class="cell-th">SS</div>
                             <div class="cell-td">2014-09-03</div>
-                        </div>
-                        <div class="row">
-                            <div class="cell-th">Phase</div>
-                            <div class="cell-td">2014-09-16</div>
+                            <div class="cell-th">Input Q'ty</div>
+                            <div class="cell-td">2014-08-12</div>
                         </div>
                         <div class="row">
                             <div class="cell-th">TOP1</div>
@@ -76,10 +77,6 @@
                             <div class="cell-th">TOP2</div>
                             <div class="cell-td">Data from your mouse/finger</div>
                         </div>
-                        <div class="row">
-                            <div class="cell-th">Input Q'ty</div>
-                            <div class="cell-td">2014-08-12</div>
-                        </div>
                     </div>
                     <h3 class="ebtd_h3">
                         <span class="ebtd"><i class="myico-arrow_down"></i><em>92</em><b>%FPY</b></span>
@@ -87,7 +84,7 @@
                         <span class="ebtd"><i class="myico-arrow_up"></i><em>97</em><b>%OOB</b></span>
                     </h3>
                 </div>
-                <div class="chartFilter">
+                <div class="chartFilter boxSizing">
                     <div class="ccs cur">A</div>
                     <div class="ccs">B</div>
                     <div class="ccs">C</div>
@@ -116,9 +113,11 @@
                     <div class="ccs">Z</div>
                 </div>
                 <div class="t-box-wrap t-box">
+                    <div id="line"></div>
                     <div class="font-bg">SVT</div>
-                    <div class="LenovoIconBox t-box" id="fpy_ood_line01"></div>
+                    <div class="LenovoIconBox t-box" id="fpy_ood_line01" ></div>
                 </div>
+                
             </div>
             <div class="t-box chartHide">
                 <ul class="chartsIconTab LenovoIconTab">
@@ -133,11 +132,15 @@
                     <a href="javascript:void(0)" class="chartsTabTag"><font>THINK</font></a>
                 </div>
                 <div class="t-box-wrap t-box">
+                    <div class="arrowL"></div>
+                    <div class="arrowR"></div>
                     <div class="font-bg">MAY</div>
                     <div class="LenovoIconBox t-box" id="fpy_ood_line02"></div>
                 </div>
             </div>
+           
         </div>
+
     </div><!-- /content -->
     <!-- footer -->
     <div data-role="footer" class="footerWrap">
@@ -154,7 +157,7 @@
                 <i class="myico-nav03"></i>
                 <p>AUDIT</p>
             </a>
-            <a href="FAI_Odm.html" data-transition="none" class="navList nav04">
+            <a href="FAI.html" data-transition="none" class="navList nav04">
                 <i class="myico-nav04"></i>
                 <p>FAI</p>
             </a>
@@ -169,5 +172,6 @@
 <!-- Javascript with AMD 
 ================================================== -->
 <script src="js/require.js" data-main="js/main" ></script>
+
 </body>
 </html>

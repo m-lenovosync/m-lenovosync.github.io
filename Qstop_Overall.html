@@ -1,0 +1,83 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LENOVO V2.0</title>
+    <meta name="description" content="">
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- IOS6全屏 Chrome高版本全屏
+================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="format-detection" content="telephone=no">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metas
+================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div data-role="page" data-quicklinks="true" class="bg_blue js-chart">
+    <header class="headerWrap">
+		<h2 class="lenovoTitle selectTitle">
+        	<select class="form_select form_txt_style" id="" name="">
+                <option selected="" value="--Please Select--">--Please Select--</option>
+                <option value="ShangHai">OVER ALL</option>
+            </select></h2>
+		<a href="User_Center.html" data-transition="none" class="jqm-navmenu-link ui-btn-left myico-user"></a>
+		<a href="Qstop_Search.html" data-transition="none" class="jqm-search-link ui-btn-right myico-search"></a>
+    </header>
+	<!-- /header -->
+    <div role="main" class="ui-content noFooter">
+        <div class="overAllWrap boxSizing">
+            <div class="overAllList">
+                <h2 class="overAllTitle">INHOUSE</h2>
+                <span class="overAllTag">BJP</span>
+                <span class="overAllTag">SHPD</span>
+                <span class="overAllTag">HYP</span>
+                <span class="overAllTag">CDP</span>
+            </div>
+            <div class="overAllList">
+                <h2 class="overAllTitle">WW</h2>
+                <span class="overAllTag cur">PON</span>
+                <span class="overAllTag">ITUN</span>
+                <span class="overAllTag">ITUD</span>
+                <span class="overAllTag">ARG</span>
+            </div>
+            <div class="overAllList">
+                <h2 class="overAllTitle">CDM</h2>
+                <span class="overAllTag">T&I</span>
+                <span class="overAllTag">CKSN</span>
+                <span class="overAllTag">CKSD</span>
+                <span class="overAllTag">WZS</span>
+                <span class="overAllTag">QSJN</span>
+                <span class="overAllTag">QSJD</span>
+                <span class="overAllTag">BLDN</span>
+                <span class="overAllTag cur">WKS</span>
+                <span class="overAllTag">LCFC</span>
+                <span class="overAllTag">FEG</span>
+                <span class="overAllTag">WCD</span>
+                <span class="overAllTag">CCD</span>
+                <span class="overAllTag">ZOWEE</span>
+                <span class="overAllTag">BLDD</span>
+            </div>
+            <div class="btnWrap">
+                <a href="javascript:void(0)" class="btnOver">OVER ALL</a>
+            </div>
+        </div>
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<!-- Javascript with AMD 
+================================================== -->
+<script src="js/require.js" data-main="js/main" ></script>
+</body>
+</html>

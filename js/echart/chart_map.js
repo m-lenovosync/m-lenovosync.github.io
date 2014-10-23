@@ -283,7 +283,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
             var $mslistwrap = $(".mslist");
             var liTempWrap = $("<div>").attr("id", "wpt");
             var liTemplate =
-                    '<div class="mapDataDetail">' +
+                    '<div class="mapDataDetail boxSizing">' +
                     '   <h2 class="mdh2">' +
 //                    '       <span class="mdh2_1">标题:</span>' +
                     '       <span class="mdh2_2">标题名</span>' +
@@ -311,7 +311,7 @@ define(['echarts', 'echarts/chart/map', 'swiper/idangerous.swiper'],
                         )
                     );
                 });
-                liTempWrap.append($('<li class="msEachlist swiper-slide"></li>').append($kt));
+                liTempWrap.append($('<li class="msEachlist boxSizing swiper-slide"></li>').append($kt));
                 if (MapArry[i]['color'] == "s1" && self.tip_idx < 0) {//初始化tip索引值，设置为第一个红色
                     self.tip_idx = i;
                 }

@@ -16,6 +16,11 @@ function allFun(LvPage) {
 //        alert(123)
         $('.ui-content').height(winHeight - 105);
     }
+	
+	$(document).on("touchstart", "input", function(e) {
+		e.preventDefault();
+		e.initEvent("click", true, false);
+	})
     //添加横屏时遮罩层
     //	$("body").append('<div class="trasfrm ds768"><div class="padArow"></div><div class="iconPad_1"><div class="iconpad_2"></div></div><div class="iconPad_1 trmoct"><div class="iconpad_2"></div></div><p class="trapf"><strong></strong> 请 <strong>切换到竖屏</strong> 以达到最佳浏览效果</p></div>');
     
@@ -81,7 +86,6 @@ function appInit(){
     require(['page_chart_control'], function(LvPage) {
         allFun(LvPage);
         LvPage.init('qstop_home');
-        //rosefunction();
         $(document).on("pageshow", ".ui-page", function(event) {
             allFun(LvPage);
             var pageName = $(this).attr('data-page-name');
@@ -89,36 +93,9 @@ function appInit(){
         }).on("pagebeforeshow", ".ui-page", function(event) {
             LvPage.disposeChart();
         });
-
-        // $(window).hashchange(function () {
-        //     ChartBind();
-        //     allFun();
-        // });
-        
-        // $(document).bind("changeChart", function (event, msg1) {
-        //     ChartBind();
-        // });
     });
 }
-// require(["jquery", "jqueryMobile",'page_chart_control'], function($,$,LvPage) {
-//     allFun();
-//     LvPage.init('qstop_home');
-//     rosefunction();
-//     $(document).on("pageshow", ".ui-page", function(event) {
-//         allFun();
-//         var pageName = $(this).attr('data-page-name');
-//         LvPage.init(pageName);
-//     });
 
-//     $(window).hashchange(function () {
-//         ChartBind();
-//         allFun();
-//     });
-    
-//     $(document).bind("changeChart", function (event, msg1) {
-//         ChartBind();
-//     });
-// });
 function ChartBind() {
     //FAI.html
     if ($('.fai-chart').attr('data-page-name') == 'fai_home') {
