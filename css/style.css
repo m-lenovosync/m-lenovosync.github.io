@@ -1275,32 +1275,22 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 }
 .selectConList{
     padding: 6px 3%;
+    overflow: hidden;
 }
 .selectConList .form_checkbox_wrap{
     margin:5px 0;
-    width: 47%;
-}
-.selTab-table{
-	display:table;
-	width:100%;
-}
-.selTab-th{
-	display:table-row;
-	width:100%;
-}
-.selTab-th .form_checkbox_wrap{
-	display:table-cell;
-	width:50%;
-	vertical-align:middle;	
+    width: 50%;
+    float: left;
+    vertical-align:middle;	
 	padding:5px 0;
 }
-.selTab-table .form_checkbox_wrap input[type="checkbox"] + label{
+.selectConList .form_checkbox_wrap input[type="checkbox"] + label{
 	display:table-cell;
 	line-height:18px;
 	padding-right:10px;
 	color:rgba(255, 255, 255, 0.4);
 }
-.selTab-table .form_checkbox_wrap input[type="checkbox"]:checked + label{
+.selectConList .form_checkbox_wrap input[type="checkbox"]:checked + label{
 	color:#fff;
 }
 .selectedSure{
@@ -2245,4 +2235,7 @@ only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 2) {
     .logWrap,.loadingCon{ background-image: url(../images/logBg@2x.jpg);}
     .arrowL,.arrowR{ background-image: url(../images/arrow-ico@2x.png);}
+}
+.product-item {
+    display:none;
 }

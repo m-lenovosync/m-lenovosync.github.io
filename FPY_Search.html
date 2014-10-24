@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_blue2 index-page">
+<div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_blue2 index-page" data-page-name="search_result">
 	<header class="headerWrap">
 		<h2 class="lenovoTitle">Search</h2>
 		<a href="FPY_OOB.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
@@ -54,7 +54,7 @@
 	            Phase
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
 	        </h2>
-	        <div class="selectConList selTab-table boxSizing">
+	        <div class="selectConList boxSizing">
                 <div class="selTab-th">
 					<span class="form_checkbox_wrap">
 					   <input type="checkbox" id="Phase-1" checked /><label for="Phase-1" class="form_checkbox">Ramp up</label>
@@ -68,163 +68,129 @@
 	            Product
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
 	        </h2>
-			<div class="ecSubNavlist ecLine">
-				<span class="ecSubTag cur">All</span>
-				<span class="ecSubTag">DT</span>
-				<span class="ecSubTag">NB</span>
+			<div class="ecSubNavlist ecLine" id="dl_level1">
+				<span class="ecSubTag cur" data-id="all">All</span>
 			</div>
+            <div class="product-item">
 			<h3 class="ecSubTit">Family</h3>
-	        <div class="selectConList selTab-table boxSizing">
-                <div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="FamilyAll" /><label for="FamilyAll" class="form_checkbox">All</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Family-2" checked /><label for="Family-2" class="form_checkbox">AIO</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Family-3" checked /><label for="Family-3" class="form_checkbox">HCC</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Family-4" checked /><label for="Family-4" class="form_checkbox">TDT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Family-5" checked /><label for="Family-5" class="form_checkbox">Muti-Mode</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Family-6" /><label for="Family-6" class="form_checkbox">LBEG</label>
-					</span>
-				</div>
+	        <div class="selectConList boxSizing" id="dl_level2">
+               <!-- <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="FamilyAll" /><label for="FamilyAll" class="form_checkbox">All</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Family-2" checked /><label for="Family-2" class="form_checkbox">AIO</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Family-3" checked /><label for="Family-3" class="form_checkbox">HCC</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Family-4" checked /><label for="Family-4" class="form_checkbox">TDT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Family-5" checked /><label for="Family-5" class="form_checkbox">Muti-Mode</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Family-6" /><label for="Family-6" class="form_checkbox">LBEG</label>
+                </span>-->
 	        </div>
 			<div class="ecLine"></div>
 			<h3 class="ecSubTit">Series</h3>
-			<div class="selectConList selTab-table boxSizing">
-                <div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="SeriesAll" checked /><label for="SeriesAll" class="form_checkbox">All</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-2" checked /><label for="Series-2" class="form_checkbox">H Series</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-3" checked /><label for="Series-3" class="form_checkbox">D Series</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-4" checked /><label for="Series-4" class="form_checkbox">K Series</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-5" checked /><label for="Series-5" class="form_checkbox">T Series</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-6" checked /><label for="Series-6" class="form_checkbox">X Series</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-7" checked /><label for="Series-7" class="form_checkbox">T Series</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Series-8" checked /><label for="Series-8" class="form_checkbox">Y Series</label>
-					</span>
-				</div>
+			<div class="selectConList boxSizing"  id="dl_level3">
+               <!-- <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="SeriesAll" checked /><label for="SeriesAll" class="form_checkbox">All</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-2" checked /><label for="Series-2" class="form_checkbox">H Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-3" checked /><label for="Series-3" class="form_checkbox">D Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-4" checked /><label for="Series-4" class="form_checkbox">K Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-5" checked /><label for="Series-5" class="form_checkbox">T Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-6" checked /><label for="Series-6" class="form_checkbox">X Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-7" checked /><label for="Series-7" class="form_checkbox">T Series</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Series-8" checked /><label for="Series-8" class="form_checkbox">Y Series</label>
+                </span>-->
 	        </div>
 			<div class="ecLine"></div>
 			<h3 class="ecSubTit">Product</h3>
-			<div class="selectConList selTab-table boxSizing">
-                <div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="ProductAll" /><label for="ProductAll" class="form_checkbox">All</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-2" checked /><label for="Product-2" class="form_checkbox">H520s</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-3" checked /><label for="Product-3" class="form_checkbox">H525s</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-4" checked /><label for="Product-4" class="form_checkbox">H505s</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-5" /><label for="Product-5" class="form_checkbox">JYs5R1</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-6" checked /><label for="Product-6" class="form_checkbox">H535s</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-7" checked /><label for="Product-7" class="form_checkbox">H515s</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Product-8" checked /><label for="Product-8" class="form_checkbox">H530s</label>
-					</span>
-				</div>
+			<div class="selectConList boxSizing"  id="dl_level4">
+               <!-- <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="ProductAll" /><label for="ProductAll" class="form_checkbox">All</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-2" checked /><label for="Product-2" class="form_checkbox">H520s</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-3" checked /><label for="Product-3" class="form_checkbox">H525s</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-4" checked /><label for="Product-4" class="form_checkbox">H505s</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-5" /><label for="Product-5" class="form_checkbox">JYs5R1</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-6" checked /><label for="Product-6" class="form_checkbox">H535s</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-7" checked /><label for="Product-7" class="form_checkbox">H515s</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Product-8" checked /><label for="Product-8" class="form_checkbox">H530s</label>
+                </span>-->
 	        </div>	
+            </div>
 			<h2 class="selectConTitle">
 	            ODM
 	            <a href="javascript:void(0)" class="selectedSure">OK</a>
 	        </h2>
-	        <div class="selectConList selTab-table boxSizing">
-                <div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="OdmAll" /><label for="OdmAll" class="form_checkbox">All</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-3" checked /><label for="Odm-3" class="form_checkbox">Compal _KS_NB</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-4" checked /><label for="Odm-4" class="form_checkbox">Compal _KS_DT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-5" checked /><label for="Odm-5" class="form_checkbox">Quanta _SJ_NB</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-6" checked /><label for="Odm-6" class="form_checkbox">Quanta _SJ_DT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-7" /><label for="Odm-7" class="form_checkbox">Bitland_ HF_NB</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-8" /><label for="Odm-8" class="form_checkbox">BJP_ BJ_DT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-9" /><label for="Odm-9" class="form_checkbox">SHP_ SH_DT</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-10" /><label for="Odm-10" class="form_checkbox">HYP_ HY_DT</label>
-					</span>
-				</div>
-				<div class="selTab-th">
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-11" /><label for="Odm-11" class="form_checkbox">CDP_ CD_DT</label>
-					</span>
-					<span class="form_checkbox_wrap">
-					   <input type="checkbox" id="Odm-12" /><label for="Odm-12" class="form_checkbox">Wistron _KS_NB</label>
-					</span>
-				</div>
+	        <div class="selectConList boxSizing">
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="OdmAll" /><label for="OdmAll" class="form_checkbox">All</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-3" checked /><label for="Odm-3" class="form_checkbox">Compal _KS_NB</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-4" checked /><label for="Odm-4" class="form_checkbox">Compal _KS_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-5" checked /><label for="Odm-5" class="form_checkbox">Quanta _SJ_NB</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-6" checked /><label for="Odm-6" class="form_checkbox">Quanta _SJ_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-7" /><label for="Odm-7" class="form_checkbox">Bitland_ HF_NB</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-8" /><label for="Odm-8" class="form_checkbox">BJP_ BJ_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-9" /><label for="Odm-9" class="form_checkbox">SHP_ SH_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-10" /><label for="Odm-10" class="form_checkbox">HYP_ HY_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-11" /><label for="Odm-11" class="form_checkbox">CDP_ CD_DT</label>
+                </span>
+                <span class="form_checkbox_wrap">
+                   <input type="checkbox" id="Odm-12" /><label for="Odm-12" class="form_checkbox">Wistron _KS_NB</label>
+                </span>
 	        </div>
 	    </div>
 	    <div class="seachBtnWrap">

@@ -7,7 +7,7 @@ define(['echarts', 'echarts/chart/line', 'echarts/chart/bar', 'echarts/chart/pie
         function LvQStop(container,chartType){
             MyChart.call(this, lvChart.echarts, lvChart.ecConfig, container, {}, 0, 0);
             this.chartType = chartType;
-            this.getChartData(0);
+            this.getChartData(1);
         }
         iheritPrototype(LvQStop, MyChart);
         LvQStop.prototype._setOptionDataZoom = function(mydata){
@@ -317,6 +317,8 @@ define(['echarts', 'echarts/chart/line', 'echarts/chart/bar', 'echarts/chart/pie
                     this.getChartDataZoom(drawFlag); break;
                 case "dataZoom_2":
                     this.getChartDataZoom_2(drawFlag); break;
+                case "dataZoomSearch":
+                    this.getChartDataZoomSearch(drawFlag); break;
                 default:break;
             }
         };
@@ -362,6 +364,72 @@ define(['echarts', 'echarts/chart/line', 'echarts/chart/bar', 'echarts/chart/pie
             };
             self._setOptionDataZoom_2(mydata);
             drawFlag&&self.resetOption();
+        };
+        LvQStop.prototype.getChartDataZoomSearch = function(drawFlag){
+            var self = this;
+            $.ajax({
+                type: "get",
+                url: "jsonpcallback/jsonpcallback_qstop_result.js",
+                dataType: "jsonp",
+                data:App_params.search_opt,
+                jsonpCallback: "qstop_result"
+            }).done(function (data) {
+                self._setSearchOpts(data.param);
+                self._setOptionDataZoom(data.chartData);
+                drawFlag && self.resetOption();
+                self._setResultList(data.table);
+            });
+        };
+        //设置搜索结果页条件
+        LvQStop.prototype._setSearchOpts = function(param){
+            var liTempWrap = $("<div>");
+            var liTemplate =
+                    '<div class="dateRow">'+
+                    '   <div class="dateCell-th boxSizing"></div>'+
+                    '   <div class="dateCell-td"></div>'+
+                    '</div>';
+            var $a = $(liTemplate);
+            $.each(param, function( key, value ) {
+                var $kt = $(liTemplate);
+                $kt.find(".dateCell-th").html(key);
+                $kt.find(".dateCell-td").html(value);
+                liTempWrap.append($kt);
+            });
+            $(".DateSearchTable").html(liTempWrap.html());
+        };
+        //设置表格数据
+        LvQStop.prototype._setResultList = function(table){
+            var tableLen = table.length;
+            var ss = '';
+            for (var i = 0; i < tableLen; i++) {
+                var item = table[i];
+                ss += '<div class="stopTab">'+
+                    '    <table cellpadding="0" cellspacing="0" border="0" width="100%">'+
+                    '        <tr>'+
+                    '            <td>Satuts:</td>'+
+                    '            <td><span>'+item.status+'</span></td>'+
+                    '            <td>IRCT:</td>'+
+                    '            <td><span>'+item.Day+'</span></td>'+
+                    '        </tr>'+
+                    '        <tr>'+
+                    '            <td>ODM:</td>'+
+                    '            <td><span>'+item.odmName+'</span></td>'+
+                    '            <td>Product:</td>'+
+                    '            <td><span>'+item.ProductNames+'</span></td>'+
+                    '        </tr>'+
+                    '        <tr>'+
+                    '            <td>Q Hold:</td>'+
+                    '            <td><span>'+item.FGs_WIP+'</span></td>'+
+                    '            <td></td>'+
+                    '            <td></td>'+
+                    '        </tr>'+
+                    '        <tr>'+
+                    '            <td colspan="4"><em>Issue descruotion: </em><span>'+item.issueDesc+'</span></td>'+
+                    '        </tr>'+
+                    '    </table>'+
+                    '</div>';
+            }
+            $(".stop_odm").html(ss);
         };
         return LvQStop;
     }

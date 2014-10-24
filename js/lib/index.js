@@ -4,6 +4,9 @@ Date.prototype.toDateInputValue = (function () {
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0, 10);
 });
+//全局变量-----存放一些不方便传递的参数
+var App_params = {};
+
 //整体框架控制模块
 function allFun(LvPage) {
     //主体内容高度设置
@@ -94,8 +97,8 @@ function appInit(){
             LvPage.disposeChart();
         });
     });
+  
 }
-
 function ChartBind() {
     //FAI.html
     if ($('.fai-chart').attr('data-page-name') == 'fai_home') {
@@ -184,5 +187,3 @@ function ChartBind() {
         });
     }
 }
-
-

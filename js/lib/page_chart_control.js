@@ -1,10 +1,10 @@
-define(function(){
+define('page_chart_control',[],function(){
 	var LvPage = {
 		chartArr:[]
 	};
 	LvPage.init = function(pageName,params){
 		switch(pageName){
-            case "fpy_oob":
+      case "fpy_oob":
 				require(["chart_fpyoob"],function(LvFpyOob){ //AUDIT
           var timeLine_2 = new LvFpyOob('fpy_ood_line01','line');
 					LvPage.chartArr.push(timeLine_2);
@@ -38,14 +38,6 @@ define(function(){
 					LvPage.resetOptionChart();
 				});
 				break;
-			case "fai_odm":
-				require(["chart_fai"],function(LvFai){ //AUDIT
-					var pie = new LvFai('ui_faiodm_pie','pie'),
-						bar = new LvFai('ui_faiodm_bar','bar_2');
-					LvPage.chartArr.push(pie, bar);
-					LvPage.resetOptionChart();
-				});
-				break;
 			case "fai_home":
 				require(["chart_fai","fai_home"],function(LvFai,FaiPage){ //AUDIT
 					var pie = new LvFai('ui_fai_pie','pie'),
@@ -53,6 +45,14 @@ define(function(){
 					LvPage.chartArr.push(pie, bar);
 					LvPage.resetOptionChart();
 					FaiPage.initworldmap('#ui_fai_map');
+				});
+				break;
+			case "fai_odm":
+				require(["chart_fai"],function(LvFai){ //AUDIT
+					var pie = new LvFai('ui_faiodm_pie','pie'),
+						bar = new LvFai('ui_faiodm_bar','bar_2');
+					LvPage.chartArr.push(pie, bar);
+					LvPage.resetOptionChart();
 				});
 				break;
 			case "fpyoob_in":
@@ -105,11 +105,10 @@ define(function(){
 						LvPage.chartArr.push(timeLine);
 						LvPage.chartArr.push(line);
 						LvPage.resetOptionChart();
-				    }
-				    else if (params == 4) {
-				        var line = new LvFpyOob('chart_fpy_Line', 'line');
-				        LvPage.chartArr.push(line);
-				        LvPage.resetOptionChart();
+				    }else if (params == 4) {
+			        var line = new LvFpyOob('chart_fpy_Line', 'line');
+			        LvPage.chartArr.push(line);
+			        LvPage.resetOptionChart();
 				    }
 				});
 				break;
@@ -133,16 +132,20 @@ define(function(){
 	            LvPage.resetOptionChart();
 	        });
 	        break;
+			case "qstop_search":
+	        require(["page_search"],function(search){
+						search.init&&search.init();
+			    });
+	        break;
 			case "qstop_result":
 			    require(["chart_qstop"], function (LvQStop) {
-			        var bar = new LvQStop('chart_qstop_bar');
+			        var bar = new LvQStop('chart_qstop_bar','dataZoomSearch');
 			        LvPage.chartArr.push(bar);
-			        LvPage.resetOptionChart();
+			        //LvPage.resetOptionChart();
 			    });
 				break;
 			default:break;
 		}
-
 	};
 	LvPage.disposeChart = function(){//清除chart实例，减小内存使用
 		$.each(LvPage.chartArr,function(k,v){
@@ -169,4 +172,50 @@ define(function(){
 		LvPage.resizeChart();
 	};
 	return LvPage;
+});
+
+define('page_search',[],function(){
+	var thisClass = new Object;
+	thisClass.init = function(){
+		//搜索按钮
+	  $(".ui-page").on('tap',".form_btn_search",function(){
+	  	App_params.search_opt = thisClass.getSearchOpts();
+      $.mobile.changePage( "Qstop_SearchResult.html", {
+        transition: "none",
+        reverse: false,
+        changeHash: true
+      });
+	  });
+	};
+	//获取查询条件
+	thisClass.getSearchOpts = function(){
+		var opts = {
+			"date_type":"1",  //时间类型
+			"beginDate":"2012-10-23",
+			"endDate":"2014-10-23",
+			"product_type":"11,12,13,14,15,17,16,19,18,21,20,23,22,25,24,27,26,29,28,31,30,34,35,32,33,38,39,36,37,42,43,40,41",
+			"product":"all",
+			"odm":"6,10,12,13,14,15,17,19",
+			"os":"all",
+			" type":"all",
+			"geo":"all",
+			"issue_type":"all",
+			"issue_category":"all",
+			"ons":"1",  //ons 1/0
+			"irct":"1,2", //irct
+		};
+		return opts;
+	};
+	return thisClass;
+});
+
+define('page_search_result',[],function(){
+	var thisClass = new Object;
+	thisClass.init = function(){
+		//搜索按钮
+	  $(".ui-page").on('tap',".form_btn_search",function(){
+	      alert(555);
+	  });
+	}
+	return thisClass;
 });

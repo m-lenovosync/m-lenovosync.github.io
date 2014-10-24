@@ -1,4 +1,4 @@
-//配置页面加载模块参数
+﻿//配置页面加载模块参数
 require.config({
 	paths: {
 		"jquery"				:['jquery/jquery-2.1.1.min','http://cdn.bootcss.com/jquery/2.1.1/jquery.min','http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min','jquery/jquery-2.1.1.min'],
@@ -19,10 +19,10 @@ require.config({
 		"rose"					:"lib/rose",
 		'fai_home'				:'echart/fai_home',
 		'chart_qstop'			:'echart/chart_qstop',
-		'page_chart_control'	:'lib/page_chart_control',
+		'page_chart_control'    : 'lib/page_chart_control',
+		'search_result_control' : 'lib/search_result_control',
 		'createjs'				:'jquery/easeljs.min',
 		'chartline'				:'lib/chart_line'
-
 	},
 	waitSeconds:30,
 	shim: {//模块依赖关系
@@ -33,7 +33,8 @@ require.config({
 		'chart_fpyoob_ramp'		: {deps: ['echartsConfig']},
 		'chart_audit'			: {deps: ['echartsConfig']},
 		'chart_fai'				: {deps: ['echartsConfig']},
-        'jqueryMobile'			: {deps: ['jquery']},
+		'jqueryMobile'          : { deps: ['jquery'] },
+		'page_chart_control'    : { deps: ['jquery'] },
         'index'					: {deps: ['jquery', 'echartsConfig'] },
         'chartline'				: {deps: ['createjs']}
 	}
