@@ -63,6 +63,7 @@
     };
     //设置表格数据
     function setTemplate(byId, data) {
+        var iwrap = $('<div>');
         var liTemplate = '<span class="form_checkbox_wrap" style="display:none"><input type="checkbox"/><label class="form_checkbox">ALL</label></span>';
         $.each(data, function (key, item) {
             $tp = $(liTemplate);
@@ -70,19 +71,23 @@
             $tp.find("input").attr('id', item.split("||")[0]);
             $tp.find("input").attr('data-id', item.split("||")[0]);
             $tp.find("label").attr('for', item.split("||")[0]);
-            $("#" + byId).append($tp);
+            iwrap.append($tp);
         });
+        $("#" + byId).html(iwrap.html());
     }
     //设置一级表格数据
     function setTemplateLevel1(data)
     {
-        var liTemplate = '<span class="ecSubTag"></span>';
+        var cwrap = $('<div>');
+        var liTemplate = '<span class="ecSubTag" data-id="all">All</span>';
+        cwrap.append($(liTemplate));
         $.each(data, function (key, item) {
             $tp2 = $(liTemplate);
             $tp2.html(item.split("||")[1]);
             $tp2.attr('data-id', item.split("||")[0]);
-            $("#dl_level1").append($tp2);
+            cwrap.append($tp2);
         });
+        $("#dl_level1").html(cwrap.html());
     }
     function _getCache(cName) {
         if (window.localStorage.getItem(cName)) {

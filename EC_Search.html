@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_color_01 index-page" data-page-name="search_result">
+    <div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_color_01 index-page" data-page-name="ec_search">
         <header class="headerWrap">
             <h2 class="lenovoTitle">Search</h2>
             <a href="EC.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
@@ -67,7 +67,6 @@
 	            <a href="javascript:void(0)" class="selectedSure">OK</a>
                 </h2>
                 <div class="ecSubNavlist" id="dl_level1">
-                    <span class="ecSubTag cur" data-id="all">All</span>
                 </div>
                 <div class="product-item">
                     <div class="ecLine"></div>
@@ -156,12 +155,14 @@
                     </div>
 
                 </div>
+                <div class="other-item">
                 <h2 class="selectConTitle">ODM
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+                    <input type="hidden" id="Odm-SelectedItem" />
                 </h2>
                 <div class="selectConList boxSizing">
                     <span class="form_checkbox_wrap">
-                        <input type="checkbox" id="OdmAll" /><label for="OdmAll" class="form_checkbox">All</label>
+                        <input type="checkbox" id="Odm-All" /><label for="Odm-All" class="form_checkbox">All</label>
                     </span>
                     <span class="form_checkbox_wrap">
                         <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
@@ -198,9 +199,9 @@
                     </span>
                 </div>
             </div>
-
+            </div>
             <div class="seachBtnWrap">
-                <a href="EC_SearchResult.html" data-transition="none" class="form_btn form_btn_search">Search</a>
+                <a href="javascript:void(0)" data-module="ec" data-transition="none" class="form_btn form_btn_search">Search</a>
             </div>
         </div>
 

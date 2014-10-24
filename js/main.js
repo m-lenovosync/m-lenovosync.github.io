@@ -10,19 +10,18 @@ require.config({
 		'echarts/chart/map'		:'echart/echarts-map',
 		"echartsConfig"			:"echart/echartsConfig",
 		"chart_map"				:"echart/chart_map",
-		"chart_home"			:"echart/chart_home",
+		'chart_qstop'			:'echart/chart_qstop',
 		"chart_fpyoob"			:"echart/chart_fpyoob",
 		"chart_audit"			:"echart/chart_audit",
 		"chart_fai"				:"echart/chart_fai",
 		"home_chart_control"	:"echart/home_chart_control",
 		"index"					:"lib/index",
 		"rose"					:"lib/rose",
-		'fai_home'				:'echart/fai_home',
-		'chart_qstop'			:'echart/chart_qstop',
 		'page_chart_control'    : 'lib/page_chart_control',
 		'search_result_control' : 'lib/search_result_control',
 		'createjs'				:'jquery/easeljs.min',
-		'chartline'				:'lib/chart_line'
+		'chartline'				:'lib/chart_line',
+		'fastclick'				:'fastclick'
 	},
 	waitSeconds:30,
 	shim: {//模块依赖关系
@@ -35,11 +34,11 @@ require.config({
 		'chart_fai'				: {deps: ['echartsConfig']},
 		'jqueryMobile'          : { deps: ['jquery'] },
 		'page_chart_control'    : { deps: ['jquery'] },
-        'index'					: {deps: ['jquery', 'echartsConfig'] },
+        'index'					: {deps: ['jquery', 'echartsConfig','fastclick'] },
         'chartline'				: {deps: ['createjs']}
 	}
 });
-require(["jquery", "jqueryMobile","index"], function($) {
+require(["jquery", "jqueryMobile",'fastclick',"index"], function($) {
 		$(function() {
 			appInit();		
 		});

@@ -1204,7 +1204,8 @@ a.myico-search,a.myico-search:hover,a.myico-search:active,a.myico-search:visited
 	background-color:rgba(0, 0, 0, 0.3);
 }
 .ecSubTag.cur{
-	background-color:#00b6c1;
+	background-color:#fff;
+    color: #1d373a;
 }
 .ecLine{
 	background:url(../images/ecarrowBg.png) no-repeat center bottom;
@@ -2139,7 +2140,7 @@ only screen and (min-device-pixel-ratio: 2) {
 .slideCheckbox input:checked + .slideBg{
     background-color: #00b6c1;
 }
-.slideCheckbox input:checked + .slideBg + label {
+.slideCheckbox input:checked ~ label {
     left: 34px;
 }
 /*============================end slide checkbox style==========================*/
@@ -2225,6 +2226,78 @@ only screen and (min-device-pixel-ratio: 2) {
 .chartWrapBox{
     height: 65%;
 }
+/*==================map_dialog===========================*/
+.map_tips{
+	display: none;
+	position:fixed;
+	font-size: 11px;
+	line-height: 18px;
+	z-index:10;
+	background:#00FFB7;
+	color:#007F59;
+	border-radius: 6px;
+	padding-bottom:10px;
+	font-weight: normal;
+    top: 50%;
+    width: 270px;
+    height: 210px;
+    left: 50%;
+    margin: -105px 0 0 -135px;
+}
+.map_tips.show{
+    display: block;
+}
+.map_tips.active{
+	display: block;
+}
+.map_tips_red {
+	background:#ff9393;
+	color:#fff;
+}
+.map_tips_yellow {
+	background:#EC8824;
+	color:#fff;
+}
+.map_tipsBox{
+    padding: 0 10px;
+}
+/*
+.map_tips:after {
+	position:absolute;
+	display: block;
+	bottom:-8px;
+	left: 50%;
+	margin-left:-5px;
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8.7px 5px 0 5px;
+	border-color: #00FFB7 transparent transparent transparent;
+}
+
+.map_tips_red:after {
+	border-color: #ff9393 transparent transparent transparent;
+}
+.map_tips_yellow:after {
+	border-color: #EC8824 transparent transparent transparent;
+}
+*/
+
+.map_tips .mtt {font-size: 14px; line-height: 36px; border-bottom: solid 1px rgba(0,0,0,0.2); padding: 0 10px; background: url(../images/map_tips_arrow.png) 248px center no-repeat; background-size: 8px 14px;}
+.map_tips .mtb {}
+.map_tips .mtb h3 {line-height: 28px; font-weight: normal; white-space: nowrap;}
+.map_tips .mtc {overflow: hidden;}
+.map_tips .mtc span {float: left; font-size: 36px; line-height: 36px; margin-right: 10px;}
+.map_tips .mtc p {line-height: 30px; font-size: 15px;}
+.map_tips .mtc p:nth-of-type(1) {padding-top: 5px;}
+.maptiptable {display: table;}
+.maptiptable .row{display: table-row;}
+.maptiptable .cell{display: table-cell;}
+.maptiptable2 {width: 100%; display: table; font-weight: bold;}
+.maptiptable2 .row{display: table-row;}
+.maptiptable2 .cell{width: 10px;white-space:nowrap; word-break:keep-all; display: table-cell;padding-left: 8px; text-align: left; border-bottom: solid 1px rgba(0,0,0,0.2); line-height: 24px;}
+.maptiptable2 .cell:first-child {padding-left: 0px;}
 /* HiDPI support */
 /* 视网膜显示屏CSS */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),

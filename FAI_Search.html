@@ -10,7 +10,7 @@
     <!-- IOS6全屏 Chrome高版本全屏
 ================================================== -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes"> 
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <!-- 让360双核浏览器用webkit内核渲染页面
 ================================================== -->
@@ -25,109 +25,109 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_org index-page" data-page-name="search_result">
-	<header class="headerWrap">
-		<h2 class="lenovoTitle">Search</h2>
-		<a href="FAI.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
-	</header>
-	<!-- /header -->		
-	<div role="main" class="ui-content noFooter">
-	    <div class="searchTabTag">
-	        <a href="Qstop_Search.html" data-transition="none" class="tabTag">Q-Stop <i class="tag_down_ico"></i></a>
-	        <a href="FPY_Search.html" data-transition="none" class="tabTag">FPY/OOB <i class="tag_down_ico"></i></a>
-	        <a href="Audit_Search.html" data-transition="none" class="tabTag">Audit <i class="tag_down_ico"></i></a>
-	        <a href="FAI_Search.html" data-transition="none" class="tabTag cur">FAI <i class="tag_down_ico"></i></a>
-	        <a href="EC_Search.html" data-transition="none" class="tabTag">EC <i class="tag_down_ico"></i></a>
-	    </div>
-	    <div class="searchTabCon">
-	        <div class="timeWrap">
-                <div class="timeLine">
-                    <span class="timeTitle">Start Time</span>
-	                <input type="date" class="form_date form_txt_style" id="startTime">
+    <div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_org index-page" data-page-name="fai_search">
+        <header class="headerWrap">
+            <h2 class="lenovoTitle">Search</h2>
+            <a href="FAI.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
+        </header>
+        <!-- /header -->
+        <div role="main" class="ui-content noFooter">
+            <div class="searchTabTag">
+                <a href="Qstop_Search.html" data-transition="none" class="tabTag">Q-Stop <i class="tag_down_ico"></i></a>
+                <a href="FPY_Search.html" data-transition="none" class="tabTag">FPY/OOB <i class="tag_down_ico"></i></a>
+                <a href="Audit_Search.html" data-transition="none" class="tabTag">Audit <i class="tag_down_ico"></i></a>
+                <a href="FAI_Search.html" data-transition="none" class="tabTag cur">FAI <i class="tag_down_ico"></i></a>
+                <a href="EC_Search.html" data-transition="none" class="tabTag">EC <i class="tag_down_ico"></i></a>
+            </div>
+            <div class="searchTabCon">
+                <div class="timeWrap">
+                    <div class="timeLine">
+                        <span class="timeTitle">Start Time</span>
+                        <input type="date" class="form_date form_txt_style" id="startTime">
+                    </div>
+                    <div class="timeLine">
+                        <span class="timeTitle">End Time</span>
+                        <input type="date" class="form_date form_txt_style" id="endTime">
+                    </div>
                 </div>
-	            <div class="timeLine">
-                    <span class="timeTitle">End Time</span>
-	                <input type="date" class="form_date form_txt_style" id="endTime">
-                </div>
-	        </div>
-			<h2 class="selectConTitle">
-	            GEO
+                <div class="other-item">
+                    <h2 class="selectConTitle">GEO
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
-	        </h2>
-	        <div class="selectConList boxSizing">
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="GeoAll" checked /><label for="GeoAll" class="form_checkbox">All</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Geo-2" checked /><label for="Geo-2" class="form_checkbox">EMEA</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Geo-3" checked /><label for="Geo-3" class="form_checkbox">MAP</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Geo-4" checked /><label for="Geo-4" class="form_checkbox">AG</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Geo-5" checked /><label for="Geo-5" class="form_checkbox">PRC</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Geo-6" checked /><label for="Geo-6" class="form_checkbox">EAP</label>
-                </span>
-	        </div>
-			<h2 class="selectConTitle">
-	            ODM
+                        <input type="hidden" id="Geo-SelectedItem" />
+                    </h2>
+                    <div class="selectConList boxSizing">
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-All" checked /><label for="Geo-All" class="form_checkbox">All</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-2" checked /><label for="Geo-2" class="form_checkbox">EMEA</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-3" checked /><label for="Geo-3" class="form_checkbox">MAP</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-4" checked /><label for="Geo-4" class="form_checkbox">AG</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-5" checked /><label for="Geo-5" class="form_checkbox">PRC</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Geo-6" checked /><label for="Geo-6" class="form_checkbox">EAP</label>
+                        </span>
+                    </div>
+                    <h2 class="selectConTitle">ODM
 	            <a href="javascript:void(0)" class="selectedSure">OK</a>
-	        </h2>
-	        <div class="selectConList boxSizing">
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="OdmAll" /><label for="OdmAll" class="form_checkbox">All</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-3" checked /><label for="Odm-3" class="form_checkbox">Compal _KS_NB</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-4" checked /><label for="Odm-4" class="form_checkbox">Compal _KS_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-5" checked /><label for="Odm-5" class="form_checkbox">Quanta _SJ_NB</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-6" checked /><label for="Odm-6" class="form_checkbox">Quanta _SJ_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-7" /><label for="Odm-7" class="form_checkbox">Bitland_ HF_NB</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-8" /><label for="Odm-8" class="form_checkbox">BJP_ BJ_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-9" /><label for="Odm-9" class="form_checkbox">SHP_ SH_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-10" /><label for="Odm-10" class="form_checkbox">HYP_ HY_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-11" /><label for="Odm-11" class="form_checkbox">CDP_ CD_DT</label>
-                </span>
-                <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Odm-12" /><label for="Odm-12" class="form_checkbox">Wistron _KS_NB</label>
-                </span>
-	        </div>
-	        <h2 class="selectConTitle">
-	            Product
+                        <input type="hidden" id="Odm-SelectedItem" />
+                    </h2>
+                    <div class="selectConList boxSizing">
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-All" /><label for="Odm-All" class="form_checkbox">All</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-3" checked /><label for="Odm-3" class="form_checkbox">Compal _KS_NB</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-4" checked /><label for="Odm-4" class="form_checkbox">Compal _KS_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-5" checked /><label for="Odm-5" class="form_checkbox">Quanta _SJ_NB</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-6" checked /><label for="Odm-6" class="form_checkbox">Quanta _SJ_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-7" /><label for="Odm-7" class="form_checkbox">Bitland_ HF_NB</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-8" /><label for="Odm-8" class="form_checkbox">BJP_ BJ_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-9" /><label for="Odm-9" class="form_checkbox">SHP_ SH_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-10" /><label for="Odm-10" class="form_checkbox">HYP_ HY_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-11" /><label for="Odm-11" class="form_checkbox">CDP_ CD_DT</label>
+                        </span>
+                        <span class="form_checkbox_wrap">
+                            <input type="checkbox" id="Odm-12" /><label for="Odm-12" class="form_checkbox">Wistron _KS_NB</label>
+                        </span>
+                    </div>
+                </div>
+                <h2 class="selectConTitle">Product
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
-	        </h2>
-			<div class="ecSubNavlist" id="dl_level1">
-				<span class="ecSubTag cur"  data-id="all">All</span>
-			</div>
-            <div class="product-item">
-             <div class="ecLine"></div>
-			<h3 class="ecSubTit">Family</h3>
-	        <div class="selectConList boxSizing" id="dl_level2">
-              <!--  <span class="form_checkbox_wrap">
+                </h2>
+                <div class="ecSubNavlist" id="dl_level1">
+                </div>
+                <div class="product-item">
+                    <div class="ecLine"></div>
+                    <h3 class="ecSubTit">Family</h3>
+                    <div class="selectConList boxSizing" id="dl_level2">
+                        <!--  <span class="form_checkbox_wrap">
                    <input type="checkbox" id="FamilyAll" /><label for="FamilyAll" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
@@ -145,11 +145,11 @@
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Family-6" /><label for="Family-6" class="form_checkbox">LBEG</label>
                 </span>-->
-	        </div>
-			<div class="ecLine"></div>
-			<h3 class="ecSubTit">Series</h3>
-			<div class="selectConList boxSizing" id="dl_level3">
-              <!--  <span class="form_checkbox_wrap">
+                    </div>
+                    <div class="ecLine"></div>
+                    <h3 class="ecSubTit">Series</h3>
+                    <div class="selectConList boxSizing" id="dl_level3">
+                        <!--  <span class="form_checkbox_wrap">
                    <input type="checkbox" id="SeriesAll" checked /><label for="SeriesAll" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
@@ -173,11 +173,11 @@
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Series-8" checked /><label for="Series-8" class="form_checkbox">Y Series</label>
                 </span>-->
-	        </div>
-			<div class="ecLine"></div>
-			<h3 class="ecSubTit">Product</h3>
-			<div class="selectConList boxSizing" id="dl_level4">
-               <!-- <span class="form_checkbox_wrap">
+                    </div>
+                    <div class="ecLine"></div>
+                    <h3 class="ecSubTit">Product</h3>
+                    <div class="selectConList boxSizing" id="dl_level4">
+                        <!-- <span class="form_checkbox_wrap">
                    <input type="checkbox" id="ProductAll" /><label for="ProductAll" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
@@ -201,20 +201,21 @@
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Product-8" checked /><label for="Product-8" class="form_checkbox">H530s</label>
                 </span>-->
-	        </div>
+                    </div>
                 </div>
-			<div class="eclevelLine"></div>
-	        <div class="PnInput"><span class="pnTextName">PN</span><span class="pntext"><input type="text" class="form_txt_style"></span></div>
-	    </div>
-	    <div class="seachBtnWrap">
-	        <a href="FAI_SearchResult-1.html" data-transition="none" class="form_btn form_btn_search">Search</a>
-	    </div>
-	</div>
+                <div class="eclevelLine"></div>
+                <div class="PnInput"><span class="pnTextName">PN</span><span class="pntext"><input type="text" class="form_txt_style"></span></div>
+            </div>
+            <div class="seachBtnWrap">
+               <a href="javascript:void(0)" data-module="fai" data-transition="none" class="form_btn form_btn_search">Search</a>
+            </div>
+        </div>
 
-</div><!-- /page -->
+    </div>
+    <!-- /page -->
 
-<!-- Javascript with AMD 
+    <!-- Javascript with AMD 
 ================================================== -->
-<script src="js/require.js" data-main="js/main" ></script>
+    <script src="js/require.js" data-main="js/main"></script>
 </body>
 </html>

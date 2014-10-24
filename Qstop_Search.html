@@ -28,7 +28,7 @@
 <div data-role="page" data-quicklinks="true" data-dom-cache="false" class="bg_blue index-page" data-page-name="qstop_search">
 	<header class="headerWrap">
 		<h2 class="lenovoTitle">Search</h2>
-		<a href="Qstop_Odm.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
+		<a href="index.html" data-transition="none" class="perLink ui-btn-left myico-arrowL"></a>
 	</header>
 	<!-- /header -->		
 	<div role="main" class="ui-content noFooter">
@@ -53,9 +53,9 @@
 	        <h2 class="selectConTitle">
 	            Product
 	            <a href="javascript:void(0)" class="selectedSure">OK</a>
+                <input type="hidden" id="Product-SelectedItem" />
 	        </h2>
 			<div class="ecSubNavlist" id="dl_level1">
-				<span class="ecSubTag" data-id="all">All</span>
 			</div>
             <div class="product-item">
                 <div class="ecLine"></div>
@@ -137,13 +137,15 @@
                 </span>-->
             </div>
            </div>
+            <div class="other-item">
 			<h2 class="selectConTitle">
 	            ODM
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+                <input type="hidden" id="Odm-SelectedItem" />
 	        </h2>
 	        <div class="selectConList boxSizing">
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="OdmAll" /><label for="OdmAll" class="form_checkbox">All</label>
+                   <input type="checkbox" id="Odm-All" /><label for="Odm-All" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Odm-2" checked /><label for="Odm-2" class="form_checkbox">T&I_SH _DT</label>
@@ -161,10 +163,11 @@
 			<h2 class="selectConTitle">
 	            Lssue Category
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+                <input type="hidden" id="Lssue-SelectedItem" />
 	        </h2>
 	        <div class="selectConList boxSizing">
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="LssueAll" checked /><label for="LssueAll" class="form_checkbox">All</label>
+                   <input type="checkbox" id="Lssue-All" checked /><label for="Lssue-All" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Lssue-2" checked /><label for="Lssue-2" class="form_checkbox">Alert</label>
@@ -179,10 +182,11 @@
 			<h2 class="selectConTitle">
 	            OS
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+                <input type="hidden" id="Os-SelectedItem" />
 	        </h2>
 	        <div class="selectConList boxSizing">
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Osll" checked /><label for="OsAll" class="form_checkbox">All</label>
+                   <input type="checkbox" id="Os-All" checked /><label for="Os-All" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Os-2" checked /><label for="Os-2" class="form_checkbox">Windows</label>
@@ -194,19 +198,20 @@
                    <input type="checkbox" id="Os-4" checked /><label for="Os-4" class="form_checkbox">DOS</label>
                 </span>
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Os-3" checked /><label for="Os-3" class="form_checkbox">Linux</label>
+                   <input type="checkbox" id="Os-5" checked /><label for="Os-5" class="form_checkbox">Linux</label>
                 </span>
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="Os-4" checked /><label for="Os-4" class="form_checkbox">Google</label>
+                   <input type="checkbox" id="Os-6" checked /><label for="Os-6" class="form_checkbox">Google</label>
                 </span>
 	        </div>
 			<h2 class="selectConTitle">
 	            GEO
 	            <a href="javascript:void(0)" class="selectedSure sure">OK</a>
+                <input type="hidden" id="Geo-SelectedItem" />
 	        </h2>
 	        <div class="selectConList boxSizing">
                 <span class="form_checkbox_wrap">
-                   <input type="checkbox" id="GeoAll" checked /><label for="GeoAll" class="form_checkbox">All</label>
+                   <input type="checkbox" id="Geo-All" checked /><label for="Geo-All" class="form_checkbox">All</label>
                 </span>
                 <span class="form_checkbox_wrap">
                    <input type="checkbox" id="Geo-2" checked /><label for="Geo-2" class="form_checkbox">EMEA</label>
@@ -250,9 +255,9 @@
                    <input type="checkbox" id="Irct-3" checked /><label for="Irct-3" class="form_checkbox">More th- an 2 Day</label>
                 </span>
 	        </div>
-	   
+	   </div>
 	    <div class="seachBtnWrap">
-	        <a href="javascript:void(0)" data-transition="none" class="form_btn form_btn_search">Search</a>
+	        <a href="javascript:void(0)" data-module="qstop" data-transition="none" class="form_btn form_btn_search">Search</a>
 	    </div>
 	</div>
 
