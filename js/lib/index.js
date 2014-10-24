@@ -10,7 +10,6 @@ var App_params = {};
 //整体框架控制模块
 function allFun(LvPage) {
     //主体内容高度设置
-	FastClick.attach(document.body);
     var winHeight = $(window).height();
     var uiContent = $('.ui-page-active').find('.ui-content');
 //    console.log(uiContent.hasClass('noFooter'))

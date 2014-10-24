@@ -40,6 +40,7 @@ require.config({
 });
 require(["jquery", "jqueryMobile",'fastclick',"index"], function($) {
 		$(function() {
+			//FastClick.attach(document.body);
 			appInit();		
 		});
 });
